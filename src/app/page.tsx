@@ -2,6 +2,7 @@ import About from '@/components/About';
 import Effect from '@/components/Effect';
 import Hero from '@/components/Hero';
 import Offer from '@/components/Offer';
+import Process from '@/components/Process';
 import Separator from '@/components/Separator';
 
 export default function Home() {
@@ -14,6 +15,8 @@ export default function Home() {
       <Effect />
       <Separator />
       <Offer />
+      <Separator />
+      <Process />
       <Separator />
     </div>
   );
