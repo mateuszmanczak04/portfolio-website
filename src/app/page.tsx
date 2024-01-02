@@ -1,4 +1,5 @@
 import About from '@/components/About';
+import Effect from '@/components/Effect';
 import Hero from '@/components/Hero';
 import Separator from '@/components/Separator';
 
@@ -9,6 +10,7 @@ export default function Home() {
       <Separator />
       <About />
       <Separator />
+      <Effect />
     </div>
   );
 }
