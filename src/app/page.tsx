@@ -1,4 +1,5 @@
 import About from '@/components/About';
+import Contact from '@/components/Contact';
 import Effect from '@/components/Effect';
 import Hero from '@/components/Hero';
 import Offer from '@/components/Offer';
@@ -18,6 +19,7 @@ export default function Home() {
       <Separator />
       <Process />
       <Separator />
+      <Contact />
     </div>
   );
 }
