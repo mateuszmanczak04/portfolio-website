@@ -3,7 +3,7 @@ import EffectCard from './EffectCard';
 
 const Effect = () => {
   return (
-    <div className='w-full flex flex-col'>
+    <div className='w-full flex flex-col py-16' id='efekt'>
       <h2 className='text-4xl font-bold text-center w-full'>
         Jaki efekt na Ciebie czeka?
       </h2>

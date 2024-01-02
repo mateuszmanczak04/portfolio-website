@@ -2,7 +2,7 @@ import EffectCard from './EffectCard';
 
 const Process = ({}) => {
   return (
-    <div className='w-full flex flex-col'>
+    <div className='w-full flex flex-col py-16' id='wspolpraca'>
       <h2 className='text-4xl text-center w-full font-bold'>
         Przebieg współpracy
       </h2>

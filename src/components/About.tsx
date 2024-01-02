@@ -1,6 +1,6 @@
 const About = ({}) => {
   return (
-    <div className='w-full flex flex-col gap-2'>
+    <div className='w-full flex flex-col gap-2 py-16' id='o-mnie'>
       <h2 className='text-4xl font-bold'>O mnie</h2>
       <p className='leading-7'>
         Aktualnie jestem studentem I roku informatyki w Poznaniu, a po godzinach

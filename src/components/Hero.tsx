@@ -3,7 +3,7 @@ import { Button } from './ui/button';
 
 const Hero = () => {
   return (
-    <div className='w-full flex flex-col gap-8 items-center'>
+    <div className='w-full flex flex-col gap-8 py-16 items-center'>
       <Image
         src='/images/hero.jpg'
         alt='hero image'
