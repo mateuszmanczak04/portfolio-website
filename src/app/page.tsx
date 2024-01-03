@@ -8,7 +8,7 @@ import Separator from '@/components/Separator';
 
 export default function Home() {
   return (
-    <div className='container py-8 flex flex-col'>
+    <div className='w-full mx-auto px-4 py-8 flex flex-col text-gray-800'>
       <Hero />
       <Separator />
       <About />

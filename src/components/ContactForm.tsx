@@ -3,7 +3,7 @@
 import { Mail, User } from 'lucide-react';
 import { Input } from './Input';
 import { MultiLineInput } from './MultiLineInput';
-import { Button } from './ui/button';
+import { Button } from './Button';
 
 const ContactForm = () => {
   return (
