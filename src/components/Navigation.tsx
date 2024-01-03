@@ -24,7 +24,7 @@ const Navigation = ({}) => {
       {/* list of mobile nav items: */}
       <div
         className={cn(
-          'fixed bg-white bottom-16 inset-x-0 flex flex-col justify-between border-t border-t-gray-200 gap-2 p-4 transition h-[320px] z-10',
+          'fixed bg-white bottom-16 inset-x-0 flex flex-col justify-between border-t border-t-gray-200 gap-2 p-4 transition h-[320px] z-40',
           open ? 'translate-y-0' : 'translate-y-[384px]'
         )}>
         <MobileNavigationItem href='#o-mnie' onClick={() => setOpen(false)}>
@@ -43,6 +43,12 @@ const Navigation = ({}) => {
           Kontakt
         </MobileNavigationItem>
       </div>
+      <div
+        className={cn(
+          'bg-black/50 inset-0 fixed transition z-30',
+          open ? 'opacity-100' : 'opacity-0 pointer-events-none'
+        )}
+        onClick={() => setOpen(false)}></div>
     </div>
   );
 };
