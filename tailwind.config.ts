@@ -11,6 +11,10 @@ const config: Config = {
       neutral: colors.neutral,
       link: '#2e70ff',
     },
+    fontFamily: {
+      heading: ['Merriweather'],
+      body: ['Inter'],
+    },
     extend: {},
   },
   plugins: [require('tailwindcss-animate')],

@@ -4,15 +4,15 @@ import ContactForm from './ContactForm';
 const Contact = () => {
   return (
     <div className='flex flex-col gap-4 py-16 w-full' id='kontakt'>
-      <h2 className='text-4xl font-bold text-center w-full'>Kontakt</h2>
+      <h2 className='h4 font-bold text-center w-full'>Kontakt</h2>
       <ContactForm />
-      <div className='flex flex-col gap-4 px-4'>
-        <h3 className='font-bold text-xl'>Inne formy kontaktu:</h3>
+      <div className='flex flex-col gap-4 px-2'>
+        <h3 className='font-bold h6'>Inne formy kontaktu:</h3>
         <div className='flex flex-col'>
           <p className='font-bold'>E-mail</p>
-          <p>mateuszmanczak2004@gmail.com</p>
+          <p className='break-all'>mateuszmanczak2004@gmail.com</p>
           <Link
-            href='mailto:mateuszmanczak2004@gmail.com block'
+            href='mailto:mateuszmanczak2004@gmail.com'
             className='text-link hover:underline'
             target='_blank'>
             Napisz

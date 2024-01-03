@@ -16,8 +16,8 @@ const Hero = () => {
       />
       <div className='w-full flex flex-col gap-4 items-center'>
         <div className='w-full flex flex-col items-center'>
-          <h1 className='text-6xl font-bold'>Portfolio</h1>
-          <h2 className='text-xl text-neutral-600'>Mateusz Mańczak</h2>
+          <h1 className='h3 font-bold'>Portfolio</h1>
+          <h2 className='h6 font-normal text-neutral-600'>Mateusz Mańczak</h2>
         </div>
         <Button
           variant='default'

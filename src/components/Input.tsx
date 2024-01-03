@@ -5,7 +5,7 @@ import { type VariantProps, cva } from 'class-variance-authority';
 import { createElement, forwardRef } from 'react';
 
 const inputVariants = cva(
-  'flex h-10 w-full rounded-md border-neutral-400 border bg-white px-3 py-2 text-sm placeholder:text-neutral-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary disabled:cursor-not-allowed disabled:opacity-50',
+  'l1 flex h-10 w-full rounded-md border-neutral-400 border bg-white px-3 py-2 placeholder:text-neutral-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary disabled:cursor-not-allowed disabled:opacity-50',
   {
     variants: {
       variant: {
@@ -35,7 +35,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
   ({ label, className, variant, inputSize, icon, ...props }, ref) => {
     return (
       <label className={cn('flex flex-col gap-1 w-full', className)}>
-        {label && <span>{label}</span>}
+        {label && <span className='l1'>{label}</span>}
         <div className='w-full relative'>
           <input
             ref={ref}

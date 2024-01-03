@@ -1,3 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Merriweather:wght@400;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  * {
+    @apply font-body;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading font-bold;
+  }
+
+  .h1 {
+    @apply text-[90px] leading-[108px];
+  }
+
+  .h2 {
+    @apply text-[67px] leading-[80px];
+  }
+
+  .h3 {
+    @apply text-[51px] leading-[64px];
+  }
+
+  .h4 {
+    @apply text-[38px] leading-[48px];
+  }
+
+  .h5 {
+    @apply text-[28px] leading-[32px];
+  }
+
+  .h6 {
+    @apply text-[21px] leading-[24px];
+  }
+
+  .b0 {
+    @apply text-[18px] leading-[28px];
+  }
+
+  .b1 {
+    @apply text-[16px] leading-[24px];
+  }
+
+  .l0 {
+    @apply text-[18px] leading-[20px];
+  }
+
+  .l1 {
+    @apply text-[16px] leading-[20px];
+  }
+
+  p {
+    @apply b1;
+  }
+}

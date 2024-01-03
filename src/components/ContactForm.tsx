@@ -8,7 +8,7 @@ import { Button } from './Button';
 const ContactForm = () => {
   return (
     <div className='flex flex-col gap-4 bg-white p-4 rounded-md shadow-xl'>
-      <h3 className='font-bold text-xl'>Skontaktuj się ze mną</h3>
+      <h3 className='font-bold h6'>Skontaktuj się ze mną</h3>
       <Input
         label='Imię i nazwisko'
         placeholder='Jan Kowalski'
