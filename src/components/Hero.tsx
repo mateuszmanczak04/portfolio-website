@@ -6,7 +6,9 @@ import { ChevronDown } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <div className='w-full flex flex-col lg:flex-row-reverse gap-8 py-16 md:py-20 lg:py-24 items-center'>
+    <div
+      id='hero'
+      className='w-full flex flex-col lg:flex-row-reverse gap-8 py-16 md:py-20 lg:py-24 items-center'>
       <Image
         src='/images/hero.jpg'
         alt='hero image'
