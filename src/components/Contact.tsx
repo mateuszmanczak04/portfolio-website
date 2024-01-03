@@ -11,29 +11,54 @@ const Contact = () => {
         <div>
           <p className='font-bold'>E-mail</p>
           <p>mateuszmanczak2004@gmail.com</p>
+          <Link
+            href='mailto:mateuszmanczak2004@gmail.com block'
+            className='text-blue-500 w-full'
+            target='_blank'>
+            Napisz
+          </Link>
         </div>
         <div>
           <p className='font-bold'>Telefon</p>
           <p>+48 725 726 901</p>
+          <Link
+            href='tel:+48725726901'
+            className='text-blue-500 w-full block'
+            target='_blank'>
+            Zadzwoń
+          </Link>
+          <Link
+            href='sms:+48725726901'
+            className='text-blue-500 w-full block'
+            target='_blank'>
+            Napisz SMS
+          </Link>
         </div>
         <div>
-          <p className='font-bold'>Messenger</p>
-          <p>m.me/mateuszmanczak04</p>
+          <p className='font-bold'>LinkedIn</p>
+          <Link
+            href='https://www.linkedin.com/in/mateusz-manczak/'
+            className='text-blue-500 w-full block'
+            target='_blank'>
+            Przejdź do profilu
+          </Link>
         </div>
         <div>
           <p className='font-bold'>Useme</p>
           <Link
             href='https://useme.com/pl/roles/contractor/mateusz-manczak,277291/'
-            className='text-blue-500 w-full'>
-            Przejdź na stronę
+            className='text-blue-500 w-full block'
+            target='_blank'>
+            Przejdź do profilu
           </Link>
         </div>
         <div>
           <p className='font-bold'>Fiverr</p>
           <Link
             href='https://www.fiverr.com/mateuszmanczak'
-            className='text-blue-500 text-wrap'>
-            Przejdź na stronę
+            className='text-blue-500 text-wrap block'
+            target='_blank'>
+            Przejdź do profilu
           </Link>
         </div>
       </div>
