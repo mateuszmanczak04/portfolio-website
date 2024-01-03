@@ -21,7 +21,7 @@ const Hero = () => {
         </div>
         <Button
           variant='default'
-          className='w-full'
+          className='w-full shadow'
           onClick={() => {
             const effectSection = document.getElementById('efekt');
             if (effectSection)

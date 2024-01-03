@@ -15,6 +15,9 @@ const config: Config = {
       heading: ['Merriweather'],
       body: ['Inter'],
     },
+    boxShadow: {
+      DEFAULT: '0px 0px 50px 0px #00000013',
+    },
     extend: {},
   },
   plugins: [require('tailwindcss-animate')],

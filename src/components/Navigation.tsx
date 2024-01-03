@@ -13,7 +13,7 @@ const Navigation = ({}) => {
   return (
     <div className='z-50'>
       {/* mobile nav bar: */}
-      <div className='fixed bottom-0 inset-x-0 bg-primary h-16 p-2 text-white flex justify-end z-50 shadow-xl'>
+      <div className='fixed bottom-0 inset-x-0 bg-primary h-16 p-2 text-white flex justify-end z-50 shadow'>
         <Button
           className='hover:bg-white/10 w-full h-full'
           onClick={() => setOpen((prev) => !prev)}>

@@ -9,7 +9,7 @@ interface OfferCardProps {
 
 const OfferCard: FC<OfferCardProps> = ({ title, description, image }) => {
   return (
-    <div className='bg-white shadow-xl rounded-md overflow-hidden'>
+    <div className='bg-white shadow rounded-md overflow-hidden'>
       <Image src={image} width={600} height={400} alt={title} />
       <div className='w-full flex flex-col gap-2 p-4'>
         <h3 className='font-bold h6 w-full'>{title}</h3>
