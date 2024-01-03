@@ -1,7 +1,13 @@
+'use client';
+
 import Image from 'next/image';
-import { Button } from './Button';
+import { Button, buttonVariants } from './Button';
 
 const Hero = () => {
+  console.log(
+    buttonVariants({ variant: 'default', size: 'lg', className: 'w-full' })
+  );
+
   return (
     <div className='w-full flex flex-col gap-8 py-16 items-center'>
       <Image
@@ -16,7 +22,15 @@ const Hero = () => {
           <h1 className='text-6xl font-bold'>Portfolio</h1>
           <h2 className='text-xl text-gray-600'>Mateusz Mańczak</h2>
         </div>
-        <Button size='lg' className='w-full'>
+        <Button
+          variant='default'
+          size='default'
+          className='w-full'
+          onClick={() => {
+            const effectSection = document.getElementById('efekt');
+            if (effectSection)
+              effectSection?.scrollIntoView({ behavior: 'smooth' });
+          }}>
           Sprawdź Ofertę
         </Button>
       </div>
