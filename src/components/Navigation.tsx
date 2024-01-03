@@ -1,6 +1,6 @@
 'use client';
 
-import { Menu } from 'lucide-react';
+import { ChevronRight, Menu } from 'lucide-react';
 import { Button } from './Button';
 import { useState } from 'react';
 import { FC } from 'react';
@@ -24,7 +24,7 @@ const Navigation = ({}) => {
       {/* list of mobile nav items: */}
       <div
         className={cn(
-          'fixed bg-white bottom-16 inset-x-0 flex flex-col justify-between gap-2 p-4 transition h-[320px] z-10',
+          'fixed bg-white bottom-16 inset-x-0 flex flex-col justify-between border-t border-t-gray-200 gap-2 p-4 transition h-[320px] z-10',
           open ? 'translate-y-0' : 'translate-y-[384px]'
         )}>
         <MobileNavigationItem href='#o-mnie' onClick={() => setOpen(false)}>
@@ -56,10 +56,11 @@ const MobileNavigationItem: FC<{
 }> = ({ children, onClick, href }) => {
   return (
     <Link
-      className='flex-1 flex items-center justify-center w-full p-2 bg-gray-50 text-gray-800 hover:bg-gray-100 rounded-md cursor-pointer'
+      className='flex-1 flex items-center justify-between w-full py-2 px-4 bg-gray-50 text-gray-800 hover:bg-gray-100 rounded-md cursor-pointer'
       onClick={onClick}
       href={href}>
       {children}
+      <ChevronRight />
     </Link>
   );
 };
