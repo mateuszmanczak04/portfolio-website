@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { Button, buttonVariants } from './Button';
+import { ChevronDown } from 'lucide-react';
 
 const Hero = () => {
   console.log(
@@ -30,7 +31,8 @@ const Hero = () => {
             const effectSection = document.getElementById('efekt');
             if (effectSection)
               effectSection?.scrollIntoView({ behavior: 'smooth' });
-          }}>
+          }}
+          icon={(props) => <ChevronDown className={props.className} />}>
           Sprawdź Ofertę
         </Button>
       </div>

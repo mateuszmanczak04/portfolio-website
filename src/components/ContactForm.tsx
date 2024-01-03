@@ -1,6 +1,6 @@
 'use client';
 
-import { Mail, User } from 'lucide-react';
+import { File, Mail, Send, User } from 'lucide-react';
 import { Input } from './Input';
 import { MultiLineInput } from './MultiLineInput';
 import { Button } from './Button';
@@ -24,8 +24,16 @@ const ContactForm = () => {
         placeholder='Witam, chciałbym zlecić stworzenie bloga internetowego. Mój budżet to 2000 zł a termin wykonania to 2 tygodnie. Strona nie będzie skomplikowana. Proszę o pilny kontakt.'
         rows={8}
       />
-      <Button variant='secondary'>Dodaj załączniki</Button>
-      <Button>Wyślij wiadomość</Button>
+      <Button
+        variant='secondary'
+        icon={(props) => <File className={props.className} />}>
+        Dodaj załączniki
+      </Button>
+      <Button
+        variant='default'
+        icon={(props) => <Send className={props.className} />}>
+        Wyślij wiadomość
+      </Button>
     </div>
   );
 };
