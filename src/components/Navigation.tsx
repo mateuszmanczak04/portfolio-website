@@ -15,7 +15,7 @@ const Navigation = ({}) => {
       {/* mobile nav bar: */}
       <div className='fixed bottom-0 inset-x-0 bg-primary h-16 p-2 text-white flex justify-end z-50 shadow-xl'>
         <Button
-          className='hover:bg-white/10 w-full'
+          className='hover:bg-white/10 w-full h-full'
           onClick={() => setOpen((prev) => !prev)}>
           <Menu />
         </Button>
@@ -23,7 +23,7 @@ const Navigation = ({}) => {
       {/* list of mobile nav items: */}
       <div
         className={cn(
-          'fixed bg-white bottom-16 inset-x-0 flex flex-col justify-between border-t border-t-gray-200 gap-2 p-4 transition h-[320px] z-40',
+          'fixed bg-white bottom-16 inset-x-0 flex flex-col justify-between border-t border-t-neutral-200 gap-2 p-4 transition h-[320px] max-h-[calc(100vh-64px)] z-40 overflow-y-scroll',
           open ? 'translate-y-0' : 'translate-y-[384px]'
         )}>
         <MobileNavigationItem href='o-mnie' onClick={() => setOpen(false)}>
@@ -44,7 +44,7 @@ const Navigation = ({}) => {
       </div>
       <div
         className={cn(
-          'bg-black/50 inset-0 fixed transition z-30',
+          'bg-neutral-950/50 inset-0 fixed transition z-30',
           open ? 'opacity-100' : 'opacity-0 pointer-events-none'
         )}
         onClick={() => setOpen(false)}></div>
@@ -61,7 +61,7 @@ const MobileNavigationItem: FC<{
 }> = ({ children, onClick, href }) => {
   return (
     <Button
-      className='flex-1 flex items-center justify-between w-full py-2 px-4 bg-gray-50 text-gray-800 hover:bg-gray-100 rounded-md cursor-pointer'
+      className='flex-1 flex items-center justify-between w-full py-2 px-4 bg-neutral-50 text-neutral-800 hover:bg-neutral-100 rounded-md cursor-pointer transition'
       onClick={() => {
         const goToSection = document.getElementById(href);
         if (goToSection) goToSection?.scrollIntoView({ behavior: 'smooth' });

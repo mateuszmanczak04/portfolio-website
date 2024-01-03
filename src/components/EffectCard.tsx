@@ -12,7 +12,7 @@ const EffectCard: FC<EffectCardProps> = ({ title, description, icon }) => {
       {icon}
       <div className='w-full flex flex-col gap-2'>
         <h3 className='font-bold text-xl w-full text-center'>{title}</h3>
-        <p className='text-center w-full text-gray-600'>{description}</p>
+        <p className='text-center w-full text-neutral-600'>{description}</p>
       </div>
     </div>
   );
