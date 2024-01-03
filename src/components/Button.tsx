@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils';
 import React, { forwardRef } from 'react';
 
 export const buttonVariants = cva(
-  'l1 h-10 px-4 py-2 inline-flex items-center justify-center gap-1 whitespace-nowrap rounded-md font-medium ring-offset-whitensition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 transition',
+  'l1 md:l0 h-10 md:h-12 px-4 md:px-6 py-2 inline-flex items-center justify-center gap-1 whitespace-nowrap rounded-md lg:rounded-xl font-medium ring-offset-whitensition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 transition',
   {
     variants: {
       variant: {
@@ -19,7 +19,7 @@ export const buttonVariants = cva(
   }
 );
 
-const iconVariants = cva('w-4 h-4', {
+const iconVariants = cva('w-4 h-4 md:w-5 md:h-5', {
   variants: {
     variant: {
       default: 'text-white',

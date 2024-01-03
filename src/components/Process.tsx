@@ -2,9 +2,11 @@ import EffectCard from './EffectCard';
 
 const Process = ({}) => {
   return (
-    <div className='w-full flex flex-col gap-4 py-16' id='wspolpraca'>
+    <div
+      className='w-full flex flex-col gap-4 lg:gap-8 md:py-20 lg:py-24'
+      id='wspolpraca'>
       <h2 className='h4 text-center w-full font-bold'>Przebieg współpracy</h2>
-      <div className='grid grid-cols-1 gap-4'>
+      <div className='grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-8'>
         <EffectCard
           title='Oferta'
           description='Na dole strony znajduje się formularz, który możesz wypełnić, bym następnie ja mógł się z tobą skontaktować.'

@@ -13,9 +13,9 @@ const Navigation = ({}) => {
   return (
     <div className='z-50'>
       {/* mobile nav bar: */}
-      <div className='fixed bottom-0 inset-x-0 bg-primary h-16 p-2 text-white flex justify-end z-50 shadow'>
+      <div className='fixed bottom-0 md:top-0 inset-x-0 bg-primary h-16 p-2 text-white flex justify-end z-50 shadow'>
         <Button
-          className='hover:bg-white/10 w-full h-full'
+          className='hover:bg-white/10 w-full md:w-fit h-full'
           onClick={() => setOpen((prev) => !prev)}>
           <Menu />
         </Button>
@@ -23,8 +23,10 @@ const Navigation = ({}) => {
       {/* list of mobile nav items: */}
       <div
         className={cn(
-          'fixed bg-white bottom-16 inset-x-0 flex flex-col justify-between border-t border-t-neutral-200 gap-2 p-4 transition h-[320px] max-h-[calc(100vh-64px)] z-40 overflow-y-scroll',
-          open ? 'translate-y-0' : 'translate-y-[384px]'
+          'fixed bg-white bottom-16 md:top-[-400px] inset-x-0 flex flex-col justify-between border-t border-t-neutral-200 gap-2 p-4 transition h-[320px] md:h-[400px] max-h-[calc(100vh-64px)] z-40 overflow-y-scroll',
+          open
+            ? 'translate-y-0 md:translate-y-[464px]'
+            : 'translate-y-[384px] md:translate-y-0'
         )}>
         <MobileNavigationItem href='o-mnie' onClick={() => setOpen(false)}>
           O mnie
@@ -61,7 +63,7 @@ const MobileNavigationItem: FC<{
 }> = ({ children, onClick, href }) => {
   return (
     <Button
-      className='flex-1 flex items-center justify-between w-full py-2 px-4 bg-neutral-50 text-neutral-800 hover:bg-neutral-100 rounded-md cursor-pointer transition'
+      className='flex-1 flex items-center justify-between w-full py-2 px-4 bg-neutral-50 text-neutral-800 hover:bg-neutral-100 rounded-md lg:rounded-xl cursor-pointer transition'
       onClick={() => {
         const goToSection = document.getElementById(href);
         if (goToSection) goToSection?.scrollIntoView({ behavior: 'smooth' });

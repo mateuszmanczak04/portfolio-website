@@ -5,7 +5,7 @@ import { cva, VariantProps } from 'class-variance-authority';
 import { FC } from 'react';
 
 const inputVariants = cva(
-  'b1 flex h-fit w-full rounded-md border border-neutral-400 bg-white px-3 py-2 placeholder:text-neutral-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary disabled:cursor-not-allowed disabled:opacity-50',
+  'b1 md:b0 flex h-fit w-full rounded-md lg:rounded-xl border border-neutral-400 bg-white px-3 py-2 placeholder:text-neutral-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary disabled:cursor-not-allowed disabled:opacity-50',
   {
     variants: {
       variant: {
@@ -37,7 +37,7 @@ const MultiLineInput: FC<MultiLineInputProps> = ({
 }) => {
   return (
     <label className={cn('flex flex-col gap-1 w-full', className)}>
-      {label && <span className='l1'>{label}</span>}
+      {label && <span className='l1 md:l0 font-medium'>{label}</span>}
       <textarea
         className={cn(inputVariants({ variant, inputSize }))}
         {...props}

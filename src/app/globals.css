@@ -59,6 +59,17 @@
   }
 
   p {
-    @apply b1;
+    @apply b1 md:b0;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 }
