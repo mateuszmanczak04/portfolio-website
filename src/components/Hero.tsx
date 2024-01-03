@@ -1,14 +1,10 @@
 'use client';
 
 import Image from 'next/image';
-import { Button, buttonVariants } from './Button';
+import { Button } from './Button';
 import { ChevronDown } from 'lucide-react';
 
 const Hero = () => {
-  console.log(
-    buttonVariants({ variant: 'default', size: 'lg', className: 'w-full' })
-  );
-
   return (
     <div className='w-full flex flex-col gap-8 py-16 items-center'>
       <Image
@@ -25,7 +21,6 @@ const Hero = () => {
         </div>
         <Button
           variant='default'
-          size='default'
           className='w-full'
           onClick={() => {
             const effectSection = document.getElementById('efekt');

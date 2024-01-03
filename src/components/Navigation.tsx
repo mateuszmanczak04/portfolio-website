@@ -16,8 +16,7 @@ const Navigation = ({}) => {
       <div className='fixed bottom-0 inset-x-0 bg-primary h-16 p-2 text-white flex justify-end z-50 shadow-xl'>
         <Button
           className='hover:bg-white/10 w-full'
-          onClick={() => setOpen((prev) => !prev)}
-          size='icon'>
+          onClick={() => setOpen((prev) => !prev)}>
           <Menu />
         </Button>
       </div>
