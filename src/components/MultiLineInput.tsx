@@ -37,7 +37,7 @@ const MultiLineInput: FC<MultiLineInputProps> = ({
 }) => {
   return (
     <label className={cn('flex flex-col gap-1 w-full', className)}>
-      {label && <span className='l1 md:l0 font-medium'>{label}</span>}
+      {label && <span className='pl-2 l1 md:l0 font-medium'>{label}</span>}
       <textarea
         className={cn(inputVariants({ variant, inputSize }))}
         {...props}
