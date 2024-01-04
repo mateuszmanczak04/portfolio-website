@@ -16,7 +16,7 @@ export default function Home() {
       <Separator />
       <Effect />
       <Separator />
-      <Offer />
+      {/* <Offer /> */}
       <Separator />
       <Process />
       <Separator />
