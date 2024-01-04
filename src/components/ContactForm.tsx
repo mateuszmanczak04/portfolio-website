@@ -5,6 +5,7 @@ import { Input } from './Input';
 import { MultiLineInput } from './MultiLineInput';
 import { Button } from './Button';
 import { FormEvent } from 'react';
+import { FileInput } from './FileInput';
 
 const ContactForm = () => {
   const handleSubmit = async (e: FormEvent) => {
@@ -43,12 +44,7 @@ const ContactForm = () => {
         placeholder='Witam, chciałbym zlecić stworzenie bloga internetowego. Mój budżet to 2000 zł a termin wykonania to 2 tygodnie. Strona nie będzie skomplikowana. Proszę o pilny kontakt.'
         rows={8}
       />
-      <Button
-        type='button'
-        variant='secondary'
-        icon={(props) => <File className={props.className} />}>
-        Dodaj załączniki
-      </Button>
+      <FileInput label='Załączniki' />
       <Button
         type='submit'
         variant='default'
@@ -58,5 +54,13 @@ const ContactForm = () => {
     </form>
   );
 };
+
+// TODO:
+// Wybierasz pliki lub przeciągasz
+// Limit 10 Mb
+// Jeśli to zdjęcia, to widzisz podgląd
+// Jeśli nie, to tylko nazwę pliku
+// Wysyłasz je na serwer
+// Zostają dołączone do emaila
 
 export default ContactForm;
