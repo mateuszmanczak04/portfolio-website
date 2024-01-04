@@ -4,10 +4,29 @@ import { File, Mail, Send, User } from 'lucide-react';
 import { Input } from './Input';
 import { MultiLineInput } from './MultiLineInput';
 import { Button } from './Button';
+import { FormEvent } from 'react';
 
 const ContactForm = () => {
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+
+    const res = await fetch('/api/send-email', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email: 'jankowalski1@gmail.com',
+        message: 'Witam, chciałbym zlecić stworzenie strony',
+        name: 'Jan Kowalski',
+      }),
+    });
+  };
+
   return (
-    <div className='lg:flex-[7] flex flex-col gap-4 lg:gap-8 bg-white p-4 md:p-8 rounded-md lg:rounded-xl shadow'>
+    <form
+      onSubmit={handleSubmit}
+      className='lg:flex-[7] flex flex-col gap-4 lg:gap-8 bg-white p-4 md:p-8 rounded-md lg:rounded-xl shadow'>
       <h3 className='font-bold h6 lg:h5'>Skontaktuj się ze mną</h3>
       <Input
         label='Imię i nazwisko'
@@ -25,16 +44,18 @@ const ContactForm = () => {
         rows={8}
       />
       <Button
+        type='button'
         variant='secondary'
         icon={(props) => <File className={props.className} />}>
         Dodaj załączniki
       </Button>
       <Button
+        type='submit'
         variant='default'
         icon={(props) => <Send className={props.className} />}>
         Wyślij wiadomość
       </Button>
-    </div>
+    </form>
   );
 };
 
