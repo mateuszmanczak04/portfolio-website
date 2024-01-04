@@ -6,7 +6,7 @@ const config: Config = {
   content: ['./src/**/*.{ts,tsx}'],
   theme: {
     colors: {
-      primary: '#2e70ff',
+      primary: '#E42859',
       white: '#FFFFFF',
       neutral: colors.neutral,
       link: '#2e70ff',
