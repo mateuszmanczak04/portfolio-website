@@ -7,7 +7,7 @@ const Contact = () => {
       className='flex flex-col gap-4 lg:gap-8 py-16 md:py-20 lg:py-24 w-full'
       id='kontakt'>
       <h2 className='h4 font-bold text-center w-full'>Kontakt</h2>
-      <div className='flex flex-col lg:flex-row gap-4 lg:gap-6'>
+      <div className='flex flex-col lg:flex-row gap-8 lg:gap-6'>
         <ContactForm />
         <div className='lg:flex-5 flex flex-col gap-4 lg:gap-6 px-2'>
           <h3 className='font-bold h6 lg:h5'>Inne formy kontaktu:</h3>
