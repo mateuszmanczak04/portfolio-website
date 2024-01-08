@@ -10,6 +10,8 @@ const config: Config = {
       white: '#FFFFFF',
       neutral: colors.neutral,
       link: '#2e70ff',
+      error: colors.red['600'],
+      success: colors.green['600'],
     },
     fontFamily: {
       heading: ['Merriweather'],
