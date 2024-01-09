@@ -24,9 +24,9 @@ const ContactForm = () => {
   const [error, setError] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
 
-  const [name, setName] = useState<string>('a');
-  const [email, setEmail] = useState<string>('a@a.a');
-  const [content, setContent] = useState<string>('a');
+  const [name, setName] = useState<string>('');
+  const [email, setEmail] = useState<string>('');
+  const [content, setContent] = useState<string>('');
 
   const [attachments, setAttachments] = useState<Attachment[]>([]);
 
