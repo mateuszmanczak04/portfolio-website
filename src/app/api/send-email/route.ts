@@ -1,32 +1,15 @@
 import nodemailer from 'nodemailer';
-import { put } from '@vercel/blob';
 
 export async function POST(request: Request) {
-  const formData = await request.formData();
-  let attachments: { path: string; filename: string }[] = [];
+  const data = await request.json();
+  const { email, name, content, attachmentsUrls } = data;
 
-  const files = formData.getAll('file');
-
-  // for (const file of files) instead of files.forEach()
-  // guarantees us awaiting every iteration
-  try {
-    for (const file of files) {
-      if (!(file instanceof File)) return;
-
-      // upload image to vercel blob storage
-      const { url } = await put(`articles/${file.name}`, file, {
-        access: 'public',
-      });
-      attachments.push({ path: url, filename: file.name });
-    }
-  } catch (err) {
-    console.log(err);
+  if (!email || !name || !content) {
     return Response.json(
       {
-        message:
-          'Nie udało się wysłać wiadomości. Spróbuj ponownie później lub skorzystaj z innej formy kontaktu.',
+        message: 'Uzupełnij brakujące pola.',
       },
-      { status: 500 }
+      { status: 400 }
     );
   }
 
@@ -42,18 +25,18 @@ export async function POST(request: Request) {
   });
 
   // get values of form fields specified by the client
-  const email = formData.get('email');
-  const name = formData.get('name');
-  const content = formData.get('content');
+  // const email = formData.get('email');
+  // const name = formData.get('name');
+  // const content = formData.get('content');
 
-  const text = `${email}\n${name}\n\n${content}`;
+  const text = `E-mail: ${email}\n Imię i nazwisko: ${name}\n\n Wiadomość: ${content}`;
 
   const mailOptions = {
     from: process.env.EMAIL,
     to: 'mateuszmanczak2004@gmail.com',
     subject: 'Wiadomość ze strony Portfolio',
     text,
-    attachments,
+    attachments: attachmentsUrls.map((url: string) => ({ path: url })),
   };
 
   try {

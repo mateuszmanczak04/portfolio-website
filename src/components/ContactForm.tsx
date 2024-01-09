@@ -6,18 +6,29 @@ import { MultiLineInput } from './MultiLineInput';
 import { Button, buttonVariants } from './Button';
 import { ChangeEvent, FormEvent, useState } from 'react';
 import { FileInput } from './FileInput';
+import { v4 as uuidv4 } from 'uuid';
 import AttachmentPreview from './AttachmentPreview';
+import mime from 'mime-types';
 import { cn } from '@/lib/utils';
+
+interface Attachment {
+  url: string;
+  error: string;
+  loading: boolean;
+  filename: string;
+  id: string;
+}
 
 const ContactForm = () => {
   const [responseMessage, setResponseMessage] = useState<string>('');
   const [error, setError] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
 
-  const [name, setName] = useState<string>('');
-  const [email, setEmail] = useState<string>('');
-  const [content, setContent] = useState<string>('');
-  const [files, setFiles] = useState<File[]>([]);
+  const [name, setName] = useState<string>('a');
+  const [email, setEmail] = useState<string>('a@a.a');
+  const [content, setContent] = useState<string>('a');
+
+  const [attachments, setAttachments] = useState<Attachment[]>([]);
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -25,20 +36,20 @@ const ContactForm = () => {
     setResponseMessage('');
     setError('');
 
-    const formData = new FormData();
-    if (files && files.length > 0) {
-      files.forEach((file) => {
-        formData.append('file', file);
-      });
-    }
-    formData.append('email', email);
-    formData.append('content', content);
-    formData.append('name', name);
-
     try {
       const res = await fetch('/api/send-email', {
         method: 'POST',
-        body: formData,
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email,
+          content,
+          name,
+          attachmentsUrls: attachments.map(
+            (attachment: Attachment) => attachment.url
+          ),
+        }),
       });
 
       if (res.ok) {
@@ -46,7 +57,7 @@ const ContactForm = () => {
         setResponseMessage(data.message);
         setEmail('');
         setContent('');
-        setFiles([]);
+        setAttachments([]);
         setName('');
       } else {
         const data = await res.json();
@@ -59,13 +70,84 @@ const ContactForm = () => {
     }
   };
 
-  const handleSelectFile = (e: ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files) {
-      setFiles((prev) => [
-        ...prev,
-        ...Array.prototype.slice.call(e.target.files), // convert FileList to array
-      ]);
+  const handleUploadFiles = (e: ChangeEvent<HTMLInputElement>) => {
+    const files = e.target.files;
+    if (!files || files.length < 1) return;
+    Promise.all(Array.from(files).map((file: File) => uploadFile(file)));
+  };
+
+  const uploadFile = async (file: File) => {
+    const id = uuidv4();
+
+    setAttachments((prev) => [
+      ...prev,
+      { url: '', error: '', loading: true, filename: file.name, id },
+    ]);
+
+    // check if file is not too big
+    if (file.size > 2097152) {
+      setAttachmentError(id, 'Maksymalny rozmiar pliku to 2 MB.');
+      return;
     }
+
+    const fileType = mime.lookup(file.name);
+
+    try {
+      // get url from server to upload file to s3
+      const { url } = await fetch(
+        `/api/s3-url?contentType=${fileType}&fileName=${file.name}`
+      ).then((res) => res.json());
+
+      // upload file to s3
+      await fetch(url, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': file.type,
+        },
+        body: file,
+      });
+
+      console.log('url: ', url);
+      const fileUrl = url.split('?')[0];
+      setAttachmentReady(id, fileUrl);
+    } catch (err) {
+      console.log(err);
+      setAttachmentError(id, 'Wystąpił błąd podczas wczytywania pliku.');
+    }
+  };
+
+  const setAttachmentReady = (id: string, url: string) => {
+    setAttachments((prev) =>
+      prev.map((attachment) => {
+        if (attachment.id === id) {
+          return {
+            ...attachment,
+            url,
+            loading: false,
+          };
+        }
+        return attachment;
+      })
+    );
+  };
+
+  const setAttachmentError = (id: string, error: string) => {
+    setAttachments((prev) =>
+      prev.map((attachment) => {
+        if (attachment.id === id) {
+          return {
+            ...attachment,
+            loading: false,
+            error,
+          };
+        }
+        return attachment;
+      })
+    );
+  };
+
+  const removeAttachment = (id: string) => {
+    setAttachments((prev) => prev.filter((attachment) => attachment.id !== id));
   };
 
   return (
@@ -95,7 +177,11 @@ const ContactForm = () => {
         value={content}
         onChange={(e) => setContent(e.target.value)}
       />
-      <div className='w-full flex flex-col gap-2'>
+      <div
+        className={cn(
+          'w-full flex flex-col gap-2',
+          loading && 'pointer-events-none'
+        )}>
         <label
           className={buttonVariants({
             variant: 'secondary',
@@ -103,31 +189,24 @@ const ContactForm = () => {
           })}>
           <FileInput
             label='Załączniki'
-            onChange={handleSelectFile}
+            onChange={handleUploadFiles}
             value=''
             multiple
             className='hidden'
+            disabled={loading}
           />
           Dodaj załączniki
         </label>
         {/* preview of images */}
-        <div
-          className={cn(
-            'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-2',
-            files.length < 1 && 'md:grid-cols-1'
-          )}>
-          {files.length < 1 && (
-            <p className='text-neutral-600 text-center w-full b1'>
-              Nie wybrano żadnych plików
-            </p>
-          )}
-          {files.map((file, index) => (
+        <div className='grid grid-cols-1 gap-2'>
+          {attachments.map((attachment: Attachment, index) => (
             <AttachmentPreview
-              file={file}
+              loading={attachment.loading}
+              error={attachment.error}
+              filename={attachment.filename}
               key={index}
-              handleRemove={(fName: string) => {
-                setFiles((prev) => prev.filter((file) => file.name !== fName));
-              }}
+              handleRemove={removeAttachment}
+              id={attachment.id}
             />
           ))}
         </div>
