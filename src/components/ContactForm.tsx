@@ -172,7 +172,7 @@ const ContactForm = () => {
       />
       <MultiLineInput
         label='Wiadomość'
-        placeholder='Witam, chciałbym zlecić stworzenie bloga internetowego. Mój budżet to 2000 zł a termin wykonania to 2 tygodnie. Strona nie będzie skomplikowana. Proszę o pilny kontakt.'
+        placeholder='Witam, chciałbym zlecić stworzenie bloga internetowego. Mój budżet to 2000 zł, a termin wykonania to 2 tygodnie. Strona nie będzie skomplikowana. Proszę o pilny kontakt.'
         rows={8}
         value={content}
         onChange={(e) => setContent(e.target.value)}
