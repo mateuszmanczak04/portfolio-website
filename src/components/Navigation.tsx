@@ -38,9 +38,9 @@ const Navigation = () => {
           <MobileNavigationItem href='efekt' onClick={() => setOpen(false)}>
             Jaki efekt na ciebie czeka?
           </MobileNavigationItem>
-          <MobileNavigationItem href='oferta' onClick={() => setOpen(false)}>
+          {/* <MobileNavigationItem href='oferta' onClick={() => setOpen(false)}>
             Aktualna oferta
-          </MobileNavigationItem>
+          </MobileNavigationItem> */}
           <MobileNavigationItem
             href='wspolpraca'
             onClick={() => setOpen(false)}>
@@ -90,7 +90,7 @@ const SideNavigation = ({}) => {
       <MobileNavigationItem href='efekt'>
         Jaki efekt na ciebie czeka?
       </MobileNavigationItem>
-      <MobileNavigationItem href='oferta'>Aktualna oferta</MobileNavigationItem>
+      {/* <MobileNavigationItem href='oferta'>Aktualna oferta</MobileNavigationItem> */}
       <MobileNavigationItem href='wspolpraca'>
         Przebieg współpracy
       </MobileNavigationItem>
