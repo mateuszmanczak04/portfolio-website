@@ -10,12 +10,12 @@ export const formSchema = z.object({
 	email: z
 		.string()
 		.trim()
-		.email()
-		.min(1, { message: 'Adres e-mail jest wymagany.' }),
+		.email({ message: 'Niepoprawny e-mail' })
+		.min(1, { message: 'Adres e-mail jest wymagany' }),
 	message: z
 		.string()
-		.min(1, { message: 'Wiadomość jest wymagana.' })
-		.max(1000, { message: 'Maksymalna długość wiadomości to 1000 znaków.' }),
+		.min(1, { message: 'Wiadomość jest wymagana' })
+		.max(1000, { message: 'Maksymalna długość wiadomości to 1000 znaków' }),
 	attachments: z
 		.object({
 			url: z.string(),
