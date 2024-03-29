@@ -216,7 +216,7 @@ const ContactForm = () => {
 						/>
 					))}
 					{attachmentsError && (
-						<p className='mt-2 h-10 rounded-md bg-destructive/10 p-2 text-center text-destructive'>
+						<p className='mt-2 rounded-md bg-destructive/10 p-2 text-center text-destructive'>
 							{attachmentsError}
 						</p>
 					)}
@@ -252,12 +252,12 @@ const ContactForm = () => {
 					</p>
 				)}
 				{submitResult?.error && (
-					<p className='h-10 rounded-md bg-destructive/10 p-2 text-center text-destructive'>
+					<p className='rounded-md bg-destructive/10 p-2 text-center text-destructive'>
 						{submitResult.error}
 					</p>
 				)}
 				{submitResult?.success && (
-					<p className='h-10 rounded-md bg-green-100 p-2 text-center text-green-600'>
+					<p className='rounded-md bg-green-100 p-2 text-center text-green-600'>
 						{submitResult.success}
 					</p>
 				)}
