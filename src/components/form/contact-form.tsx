@@ -159,10 +159,7 @@ const ContactForm = () => {
 			</CardHeader>
 			<CardContent>
 				<Form {...form}>
-					<form
-						id='formularz'
-						onSubmit={form.handleSubmit(onSubmit)}
-						className='space-y-4'>
+					<form onSubmit={form.handleSubmit(onSubmit)} className='space-y-4'>
 						<FormField
 							control={form.control}
 							name='name'
@@ -172,6 +169,7 @@ const ContactForm = () => {
 									<FormControl>
 										<div className='relative'>
 											<Input
+												id='form-name-input'
 												{...field}
 												placeholder='Jan Kowalski'
 												className='pl-10'

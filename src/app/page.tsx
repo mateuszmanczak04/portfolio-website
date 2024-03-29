@@ -1,4 +1,4 @@
-import GoToFormButton from '@/components/form/go-to-form-button';
+import GoToFormButton from '@/components/form/go-further-button';
 import About from '@/components/page-sections/about';
 import Contact from '@/components/page-sections/contact';
 import Effect from '@/components/page-sections/effect';
@@ -15,7 +15,6 @@ export default function Home() {
 			<About />
 			<Separator />
 			<Effect />
-			<Separator />
 			<Separator />
 			<Process />
 			<Separator />
