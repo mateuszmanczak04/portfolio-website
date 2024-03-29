@@ -1,11 +1,11 @@
-import About from '@/components/About';
-import Contact from '@/components/Contact';
-import Effect from '@/components/Effect';
-import Footer from '@/components/Footer';
-import Hero from '@/components/Hero';
-import Offer from '@/components/Offer';
-import Process from '@/components/Process';
-import Separator from '@/components/Separator';
+import About from '@/components/about';
+import Contact from '@/components/contact';
+import Effect from '@/components/effect';
+import Footer from '@/components/footer';
+import Hero from '@/components/hero';
+import Offer from '@/components/offer';
+import Process from '@/components/process';
+import Separator from '@/components/separator';
 
 export default function Home() {
   return (

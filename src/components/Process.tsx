@@ -1,4 +1,4 @@
-import EffectCard from './EffectCard';
+import EffectCard from './effect-card';
 
 const Process = ({}) => {
   return (

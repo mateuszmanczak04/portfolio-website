@@ -1,7 +1,7 @@
 'use client';
 
 import { FC } from 'react';
-import Navigation from './Navigation';
+import Navigation from './navigation';
 
 interface AppLayoutProps {
   children: React.ReactNode;

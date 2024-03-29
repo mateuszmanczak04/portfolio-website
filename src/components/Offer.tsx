@@ -1,4 +1,4 @@
-import OfferCard from './OfferCard';
+import OfferCard from './offer-card';
 
 const Offer = () => {
   return (
