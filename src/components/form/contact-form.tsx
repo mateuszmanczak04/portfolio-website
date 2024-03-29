@@ -143,6 +143,7 @@ const ContactForm = () => {
 	return (
 		<Form {...form}>
 			<form
+				id='formularz'
 				onSubmit={form.handleSubmit(onSubmit)}
 				className='flex-1 space-y-4 rounded-xl bg-white p-4 shadow-lg md:p-8'>
 				<FormField

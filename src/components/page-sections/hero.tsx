@@ -2,6 +2,7 @@
 
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Hero = () => {
 	return (
@@ -22,15 +23,8 @@ const Hero = () => {
 						Mateusz Mańczak
 					</h2>
 				</div>
-				<Button
-					variant='default'
-					className='shadow'
-					onClick={() => {
-						const effectSection = document.getElementById('efekt');
-						if (effectSection)
-							effectSection?.scrollIntoView({ behavior: 'smooth' });
-					}}>
-					Poznaj Ofertę
+				<Button asChild>
+					<Link href='#o-mnie'>Poznaj Ofertę</Link>
 				</Button>
 			</div>
 		</div>
