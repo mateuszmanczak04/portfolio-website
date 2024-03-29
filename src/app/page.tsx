@@ -1,9 +1,9 @@
-import About from '@/components/about';
-import Contact from '@/components/contact';
-import Effect from '@/components/effect';
-import Footer from '@/components/footer';
-import Hero from '@/components/hero';
-import Process from '@/components/process';
+import About from '@/components/page-sections/about';
+import Contact from '@/components/page-sections/contact';
+import Effect from '@/components/page-sections/effect';
+import Footer from '@/components/page-sections/footer';
+import Hero from '@/components/page-sections/hero';
+import Process from '@/components/page-sections/process';
 import Separator from '@/components/separator';
 
 export default function Home() {
@@ -15,7 +15,6 @@ export default function Home() {
 			<Separator />
 			<Effect />
 			<Separator />
-			{/* <Offer /> */}
 			<Separator />
 			<Process />
 			<Separator />
