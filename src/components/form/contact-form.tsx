@@ -144,7 +144,7 @@ const ContactForm = () => {
 		<Form {...form}>
 			<form
 				onSubmit={form.handleSubmit(onSubmit)}
-				className='flex-1 space-y-4 rounded-xl bg-white p-8 shadow-lg'>
+				className='flex-1 space-y-4 rounded-xl bg-white p-4 shadow-lg md:p-8'>
 				<FormField
 					control={form.control}
 					name='name'

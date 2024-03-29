@@ -6,7 +6,7 @@ const Effect = () => {
 		<div
 			className='flex w-full flex-col gap-4 py-16 md:py-20 lg:gap-8 lg:py-24'
 			id='efekt'>
-			<h2 className='h4 w-full text-center font-bold'>
+			<h2 className='w-full text-center text-4xl font-bold'>
 				Jaki efekt na Ciebie czeka?
 			</h2>
 			<div className='grid grid-cols-1 gap-4 sm:grid-cols-2 lg:gap-8'>

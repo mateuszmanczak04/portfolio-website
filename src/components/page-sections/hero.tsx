@@ -17,8 +17,10 @@ const Hero = () => {
 			/>
 			<div className='flex w-full flex-col items-center gap-4 lg:items-end lg:gap-8'>
 				<div className='flex w-full flex-col items-center lg:items-end lg:gap-1'>
-					<h1 className='h3 md:h1 font-bold'>Portfolio</h1>
-					<h2 className='h6 font-normal text-neutral-600'>Mateusz Mańczak</h2>
+					<h1 className='text-6xl font-bold'>Portfolio</h1>
+					<h2 className='text-2xl font-normal text-neutral-600'>
+						Mateusz Mańczak
+					</h2>
 				</div>
 				<Button
 					variant='default'
