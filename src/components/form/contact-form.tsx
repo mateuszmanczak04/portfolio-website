@@ -23,6 +23,15 @@ import { ChangeEvent, useState, useTransition } from 'react';
 import { useFormState } from 'react-dom';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
+import {
+	Card,
+	CardContent,
+	CardDescription,
+	CardFooter,
+	CardHeader,
+	CardTitle,
+} from '@/components/ui/card';
+import Link from 'next/link';
 
 const ContactForm = () => {
 	const [isUploadingAttachments, setIsUploadingAttachments] = useState(false);
@@ -141,129 +150,148 @@ const ContactForm = () => {
 	};
 
 	return (
-		<Form {...form}>
-			<form
-				id='formularz'
-				onSubmit={form.handleSubmit(onSubmit)}
-				className='flex-1 space-y-4 rounded-xl bg-white p-4 shadow-lg md:p-8'>
-				<FormField
-					control={form.control}
-					name='name'
-					render={({ field }) => (
-						<FormItem>
-							<FormLabel>Imię i nazwisko</FormLabel>
-							<FormControl>
-								<div className='relative'>
-									<Input
-										{...field}
-										placeholder='Jan Kowalski'
-										className='pl-10'
-									/>
-									<User className='absolute left-2.5 top-2.5 h-5 w-5' />
-								</div>
-							</FormControl>
-							<FormMessage />
-						</FormItem>
-					)}
-				/>
-				<FormField
-					control={form.control}
-					name='email'
-					render={({ field }) => (
-						<FormItem>
-							<FormLabel>E-mail</FormLabel>
-							<FormControl>
-								<div className='relative'>
-									<Input
-										{...field}
-										placeholder='example@abc.com'
-										className='pl-10'
-									/>
-									<Mail className='absolute left-2.5 top-2.5 h-5 w-5' />
-								</div>
-							</FormControl>
-							<FormMessage />
-						</FormItem>
-					)}
-				/>
-				<FormField
-					control={form.control}
-					name='message'
-					render={({ field }) => (
-						<FormItem>
-							<FormLabel>Wiadomość</FormLabel>
-							<FormControl>
-								<Textarea
-									rows={8}
-									{...field}
-									placeholder='Dzień dobry, chciałbym zlecić ...'
+		<Card className='flex-1'>
+			<CardHeader>
+				<CardTitle>Bezpośredni formularz kontaktowy</CardTitle>
+				<CardDescription>
+					To, co tu napiszesz, przyjdzie mi natychmiastowo na maila.
+				</CardDescription>
+			</CardHeader>
+			<CardContent>
+				<Form {...form}>
+					<form
+						id='formularz'
+						onSubmit={form.handleSubmit(onSubmit)}
+						className='space-y-4'>
+						<FormField
+							control={form.control}
+							name='name'
+							render={({ field }) => (
+								<FormItem>
+									<FormLabel>Imię i nazwisko</FormLabel>
+									<FormControl>
+										<div className='relative'>
+											<Input
+												{...field}
+												placeholder='Jan Kowalski'
+												className='pl-10'
+											/>
+											<User className='absolute left-2.5 top-2.5 h-5 w-5' />
+										</div>
+									</FormControl>
+									<FormMessage />
+								</FormItem>
+							)}
+						/>
+						<FormField
+							control={form.control}
+							name='email'
+							render={({ field }) => (
+								<FormItem>
+									<FormLabel>E-mail</FormLabel>
+									<FormControl>
+										<div className='relative'>
+											<Input
+												{...field}
+												placeholder='example@abc.com'
+												className='pl-10'
+											/>
+											<Mail className='absolute left-2.5 top-2.5 h-5 w-5' />
+										</div>
+									</FormControl>
+									<FormMessage />
+								</FormItem>
+							)}
+						/>
+						<FormField
+							control={form.control}
+							name='message'
+							render={({ field }) => (
+								<FormItem>
+									<FormLabel>Wiadomość</FormLabel>
+									<FormControl>
+										<Textarea
+											rows={8}
+											{...field}
+											placeholder='Dzień dobry, chciałbym zlecić ...'
+										/>
+									</FormControl>
+									<FormMessage />
+								</FormItem>
+							)}
+						/>
+						{/* preview of attachments: */}
+						<div className='grid grid-cols-1 gap-2'>
+							{isUploadingAttachments && (
+								<p className='animate-pulse text-center'>Ładuję pliki...</p>
+							)}
+							{form.watch('attachments').map((attachment: Attachment) => (
+								<AttachmentItem
+									key={attachment.url}
+									remove={attachmentRemoved}
+									url={attachment.url}
+									filename={attachment.filename}
 								/>
-							</FormControl>
-							<FormMessage />
-						</FormItem>
-					)}
-				/>
-				{/* preview of attachments: */}
-				<div className='grid grid-cols-1 gap-2'>
-					{isUploadingAttachments && (
-						<p className='animate-pulse text-center'>Ładuję pliki...</p>
-					)}
-					{form.watch('attachments').map((attachment: Attachment) => (
-						<AttachmentItem
-							key={attachment.url}
-							remove={attachmentRemoved}
-							url={attachment.url}
-							filename={attachment.filename}
-						/>
-					))}
-					{attachmentsError && (
-						<p className='mt-2 rounded-md bg-destructive/10 p-2 text-center text-destructive'>
-							{attachmentsError}
-						</p>
-					)}
-				</div>
-				{/* button to add attachments: */}
-				<Button
-					type='button'
-					variant='secondary'
-					className='flex w-full items-center gap-2'
-					asChild>
-					<label className='cursor-pointer'>
-						<input
-							onChange={onFileInputChange}
-							type='file'
-							name='attachment'
-							hidden
-							multiple
-						/>
-						<File className='h-5 w-5' />
-						<span>Dodaj załączniki</span>
-					</label>
-				</Button>
-				<Button
-					type='submit'
-					className='flex w-full items-center gap-2'
-					disabled={isPending}>
-					<Send className='h-5 w-5' />
-					<span>Wyślij wiadomość</span>
-				</Button>
-				{isPending && (
-					<p className='animate-pulse text-center'>
-						Trwa wysyłanie wiadomości...
-					</p>
-				)}
-				{submitResult?.error && (
-					<p className='rounded-md bg-destructive/10 p-2 text-center text-destructive'>
-						{submitResult.error}
-					</p>
-				)}
-				{submitResult?.success && (
-					<p className='rounded-md bg-green-100 p-2 text-center text-green-600'>
-						{submitResult.success}
-					</p>
-				)}
-			</form>
-		</Form>
+							))}
+							{attachmentsError && (
+								<p className='mt-2 rounded-md bg-destructive/10 p-2 text-center text-destructive'>
+									{attachmentsError}
+								</p>
+							)}
+						</div>
+						{/* button to add attachments: */}
+						<Button
+							type='button'
+							variant='secondary'
+							className='flex w-full items-center gap-2'
+							asChild>
+							<label className='cursor-pointer'>
+								<input
+									onChange={onFileInputChange}
+									type='file'
+									name='attachment'
+									hidden
+									multiple
+								/>
+								<File className='h-5 w-5' />
+								<span>Dodaj załączniki</span>
+							</label>
+						</Button>
+						<Button
+							type='submit'
+							className='flex w-full items-center gap-2'
+							disabled={isPending}>
+							<Send className='h-5 w-5' />
+							<span>Wyślij wiadomość</span>
+						</Button>
+						{isPending && (
+							<p className='animate-pulse text-center'>
+								Trwa wysyłanie wiadomości...
+							</p>
+						)}
+						{submitResult?.error && (
+							<p className='rounded-md bg-destructive/10 p-2 text-center text-destructive'>
+								{submitResult.error}
+							</p>
+						)}
+						{submitResult?.success && (
+							<p className='rounded-md bg-green-100 p-2 text-center text-green-600'>
+								{submitResult.success}
+							</p>
+						)}
+					</form>
+				</Form>
+			</CardContent>
+			<CardFooter>
+				<p>
+					Klikając &bdquo;wyślij wiadomość&rdquo; akceptujesz&nbsp;
+					<Link href='/regulamin' className='underline'>
+						regulamin
+					</Link>
+					.
+				</p>
+			</CardFooter>
+		</Card>
 	);
 };
 

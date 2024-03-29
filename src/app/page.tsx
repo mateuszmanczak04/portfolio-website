@@ -5,7 +5,7 @@ import Effect from '@/components/page-sections/effect';
 import Footer from '@/components/page-sections/footer';
 import Hero from '@/components/page-sections/hero';
 import Process from '@/components/page-sections/process';
-import Separator from '@/components/separator';
+import { Separator } from '@/components/ui/separator';
 
 export default function Home() {
 	return (
