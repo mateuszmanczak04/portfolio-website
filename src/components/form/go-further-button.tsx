@@ -37,7 +37,7 @@ const GoFurtherButton: FC<GoFurtherButtonProps> = ({}) => {
 				case 'kontakt':
 					setIsLastItem(true);
 				default:
-					return;
+					router.push('#o-mnie');
 			}
 		} else {
 			const formNameInput = document.getElementById('form-name-input')!;
