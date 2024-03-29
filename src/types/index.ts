@@ -1,4 +1,4 @@
 export interface Attachment {
-  url: string;
-  filename: string;
+	url: string;
+	filename: string;
 }

@@ -1,5 +1,5 @@
 const Separator = () => {
-  return <div className='w-full h-px bg-neutral-200'></div>;
+	return <div className='h-px w-full bg-neutral-200'></div>;
 };
 
 export default Separator;
