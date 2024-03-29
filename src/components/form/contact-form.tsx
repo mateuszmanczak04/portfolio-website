@@ -5,6 +5,14 @@ import { submitForm } from '@/actions/submit-form';
 import AttachmentItem from '@/components/form/attachment';
 import { Button } from '@/components/ui/button';
 import {
+	Card,
+	CardContent,
+	CardDescription,
+	CardFooter,
+	CardHeader,
+	CardTitle,
+} from '@/components/ui/card';
+import {
 	Form,
 	FormControl,
 	FormField,
@@ -19,19 +27,11 @@ import { type Attachment } from '@/types';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { File, Mail, Send, User } from 'lucide-react';
 import mime from 'mime-types';
+import Link from 'next/link';
 import { ChangeEvent, useState, useTransition } from 'react';
 import { useFormState } from 'react-dom';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
-import {
-	Card,
-	CardContent,
-	CardDescription,
-	CardFooter,
-	CardHeader,
-	CardTitle,
-} from '@/components/ui/card';
-import Link from 'next/link';
 
 const ContactForm = () => {
 	const [isUploadingAttachments, setIsUploadingAttachments] = useState(false);

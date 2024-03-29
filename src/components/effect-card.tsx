@@ -1,20 +1,29 @@
 import { FC } from 'react';
+import {
+	Card,
+	CardContent,
+	CardDescription,
+	CardHeader,
+	CardTitle,
+} from '@/components/ui/card';
 
 interface EffectCardProps {
 	title: string;
+	subtitle: string;
 	description: string;
-	icon: React.ReactNode;
 }
 
-const EffectCard: FC<EffectCardProps> = ({ title, description, icon }) => {
+const EffectCard: FC<EffectCardProps> = ({ title, subtitle, description }) => {
 	return (
-		<div className='flex h-[320px] flex-col items-center justify-center gap-4 rounded-md border-b-4 border-b-primary bg-white p-4 shadow lg:h-[400px] lg:gap-8 lg:rounded-xl lg:border-b-8 lg:p-8'>
-			{icon}
-			<div className='flex w-full flex-col gap-2 lg:gap-4'>
-				<h3 className='w-full text-center text-2xl font-bold'>{title}</h3>
-				<p className='w-full text-center text-neutral-600'>{description}</p>
-			</div>
-		</div>
+		<Card className='overflow-hidden'>
+			<CardHeader>
+				<CardTitle>{title}</CardTitle>
+				<CardDescription>{subtitle}</CardDescription>
+			</CardHeader>
+			<CardContent>
+				<p>{description}</p>
+			</CardContent>
+		</Card>
 	);
 };
 
