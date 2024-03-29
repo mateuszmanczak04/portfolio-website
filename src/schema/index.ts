@@ -9,8 +9,8 @@ export const formSchema = z.object({
 	name: z.string().trim().optional(),
 	email: z
 		.string()
-		.email()
 		.trim()
+		.email()
 		.min(1, { message: 'Adres e-mail jest wymagany.' }),
 	message: z
 		.string()
