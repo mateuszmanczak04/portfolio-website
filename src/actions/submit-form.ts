@@ -44,7 +44,7 @@ export const submitForm = async (
 		await transporter.sendMail(mailOptions);
 		return {
 			success:
-				'Pomyślnie wysłano wiadomość. Oczekuj odpowiedzi przez najbliższy czas.',
+				'Pomyślnie wysłano wiadomość. Oczekuj odpowiedzi w najbliższym czasie.',
 		};
 	} catch (err) {
 		return {
