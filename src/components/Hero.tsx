@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { Button } from './Button';
+import { Button } from '@/components/ui/button';
 import { ChevronDown } from 'lucide-react';
 
 const Hero = () => {
@@ -29,7 +29,8 @@ const Hero = () => {
             if (effectSection)
               effectSection?.scrollIntoView({ behavior: 'smooth' });
           }}
-          icon={(props) => <ChevronDown className={props.className} />}>
+          // icon={(props) => <ChevronDown className={props.className} />}
+        >
           Poznaj Ofertę
         </Button>
       </div>

@@ -1,75 +1,76 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Merriweather:wght@400;700&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-  * {
-    @apply font-body;
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 224 71.4% 4.1%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 224 71.4% 4.1%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71.4% 4.1%;
+
+    --primary: 220.9 39.3% 11%;
+    --primary-foreground: 210 20% 98%;
+
+    --secondary: 220 14.3% 95.9%;
+    --secondary-foreground: 220.9 39.3% 11%;
+
+    --muted: 220 14.3% 95.9%;
+    --muted-foreground: 220 8.9% 46.1%;
+
+    --accent: 220 14.3% 95.9%;
+    --accent-foreground: 220.9 39.3% 11%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 20% 98%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 224 71.4% 4.1%;
+
+    --radius: 0.5rem;
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @apply font-heading font-bold;
-  }
+  .dark {
+    --background: 224 71.4% 4.1%;
+    --foreground: 210 20% 98%;
 
-  .h1 {
-    @apply text-[90px] leading-[108px];
-  }
+    --card: 224 71.4% 4.1%;
+    --card-foreground: 210 20% 98%;
 
-  .h2 {
-    @apply text-[67px] leading-[80px];
-  }
+    --popover: 224 71.4% 4.1%;
+    --popover-foreground: 210 20% 98%;
 
-  .h3 {
-    @apply text-[51px] leading-[64px];
-  }
+    --primary: 210 20% 98%;
+    --primary-foreground: 220.9 39.3% 11%;
 
-  .h4 {
-    @apply text-[38px] leading-[48px];
-  }
+    --secondary: 215 27.9% 16.9%;
+    --secondary-foreground: 210 20% 98%;
 
-  .h5 {
-    @apply text-[28px] leading-[32px];
-  }
+    --muted: 215 27.9% 16.9%;
+    --muted-foreground: 217.9 10.6% 64.9%;
 
-  .h6 {
-    @apply text-[21px] leading-[24px];
-  }
+    --accent: 215 27.9% 16.9%;
+    --accent-foreground: 210 20% 98%;
 
-  .b0 {
-    @apply text-[18px] leading-[28px];
-  }
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 20% 98%;
 
-  .b1 {
-    @apply text-[16px] leading-[24px];
-  }
-
-  .l0 {
-    @apply text-[18px] leading-[20px];
-  }
-
-  .l1 {
-    @apply text-[16px] leading-[20px];
-  }
-
-  p {
-    @apply b1 md:b0;
+    --border: 215 27.9% 16.9%;
+    --input: 215 27.9% 16.9%;
+    --ring: 216 12.2% 83.9%;
   }
 }
 
-@layer utilities {
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
+@layer base {
+  * {
+    @apply border-border;
   }
-
-  .no-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+  body {
+    @apply bg-background text-foreground;
   }
 }

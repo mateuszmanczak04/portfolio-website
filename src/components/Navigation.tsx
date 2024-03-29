@@ -1,7 +1,7 @@
 'use client';
 
 import { ChevronRight, Menu } from 'lucide-react';
-import { Button } from './Button';
+import { Button } from '@/components/ui/button';
 import { useState } from 'react';
 import { FC } from 'react';
 import { cn } from '@/lib/utils';
