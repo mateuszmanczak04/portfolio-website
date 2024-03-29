@@ -17,11 +17,11 @@ const EffectCard: FC<EffectCardProps> = ({ title, subtitle, description }) => {
 	return (
 		<Card className='overflow-hidden'>
 			<CardHeader>
-				<CardTitle>{title}</CardTitle>
+				<CardTitle className='leading-[120%]'>{title}</CardTitle>
 				<CardDescription>{subtitle}</CardDescription>
 			</CardHeader>
 			<CardContent>
-				<p>{description}</p>
+				<p className='leading-7'>{description}</p>
 			</CardContent>
 		</Card>
 	);

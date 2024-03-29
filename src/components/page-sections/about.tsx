@@ -4,7 +4,7 @@ const About = () => {
 			className='mx-auto flex w-full max-w-screen-md flex-col items-center gap-8 py-16 md:py-20 lg:py-24'
 			id='o-mnie'>
 			<h2 className='text-4xl font-bold'>O mnie</h2>
-			<p className='text-justify'>
+			<p className='w-full max-w-[500px] text-justify leading-7'>
 				Aktualnie jestem studentem I roku informatyki w Poznaniu, a po godzinach
 				szkolnych interesuję się programowaniem, szczególnie tworzeniem
 				aplikacji webowych. W celu zbudowania mojego portfolio stworzyłem tę
