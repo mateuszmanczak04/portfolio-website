@@ -1,5 +1,5 @@
 import { BarChart4, GaugeCircle, Layers3, Maximize2 } from 'lucide-react';
-import EffectCard from './effect-card';
+import EffectCard from '@/components/effect-card';
 
 const Effect = () => {
 	return (

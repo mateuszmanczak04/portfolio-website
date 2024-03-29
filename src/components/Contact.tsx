@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import ContactForm from './form/contact-form';
+import ContactForm from '@/components/form/contact-form';
 
 const Contact = () => {
 	return (
