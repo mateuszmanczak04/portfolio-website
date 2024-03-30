@@ -13,9 +13,9 @@ const Contact = () => {
 					<h3 className='text-2xl font-bold'>Inne formy kontaktu:</h3>
 					<div className='flex flex-col'>
 						<p className='font-bold'>E-mail</p>
-						<p className='break-all'>mateuszmanczak2004@gmail.com</p>
+						<p className='break-all'>mateuszmanczak@icloud.com</p>
 						<Link
-							href='mailto:mateuszmanczak2004@gmail.com'
+							href='mailto:mateuszmanczak@icloud.com'
 							className='text-link hover:underline'
 							target='_blank'>
 							Napisz
