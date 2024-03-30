@@ -16,7 +16,7 @@
     "aws-sdk": "^2.1532.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
-    "lucide-react": "^0.303.0",
+    "lucide-react": "^0.363.0",
     "mime-types": "^2.1.35",
     "nanoid": "^5.0.6",
     "next": "14.0.4",
