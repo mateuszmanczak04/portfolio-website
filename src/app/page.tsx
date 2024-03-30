@@ -1,4 +1,4 @@
-import GoToFormButton from '@/components/form/go-further-button';
+import GoToFormButton from '@/components/form/message-button';
 import About from '@/components/page-sections/about';
 import Contact from '@/components/page-sections/contact';
 import Effect from '@/components/page-sections/effect';
