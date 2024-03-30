@@ -17,9 +17,7 @@ export default function RootLayout({
 			<head>
 				<link rel='icon' href='/icons/favicon.ico' sizes='any' />
 			</head>
-			<body className='mx-auto flex max-w-screen-2xl justify-between'>
-				{children}
-			</body>
+			<body>{children}</body>
 		</html>
 	);
 }

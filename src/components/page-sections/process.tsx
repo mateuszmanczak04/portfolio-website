@@ -3,7 +3,7 @@ import EffectCard from '@/components/effect-card';
 const Process = () => {
 	return (
 		<div
-			className='mx-auto flex w-full max-w-screen-md flex-col items-center gap-8 py-16 md:py-20 lg:py-24'
+			className='mx-auto flex w-full max-w-screen-md flex-col items-center gap-8 px-4 py-16 md:py-20 lg:py-24'
 			id='wspolpraca'>
 			<h2 className='w-full text-center text-4xl font-bold'>
 				Przebieg współpracy

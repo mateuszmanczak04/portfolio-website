@@ -1,4 +1,3 @@
-import GoToFormButton from '@/components/form/message-button';
 import About from '@/components/page-sections/about';
 import Contact from '@/components/page-sections/contact';
 import Effect from '@/components/page-sections/effect';
@@ -9,18 +8,17 @@ import { Separator } from '@/components/ui/separator';
 
 export default function Home() {
 	return (
-		<div className='mx-auto flex max-w-screen-lg flex-1 flex-col p-4 text-neutral-800 md:px-8'>
+		<div className=''>
 			<Hero />
 			<Separator />
 			<About />
-			<Separator />
+			<Separator className='mx-auto max-w-screen-lg' />
 			<Effect />
-			<Separator />
+			<Separator className='mx-auto max-w-screen-lg' />
 			<Process />
-			<Separator />
+			<Separator className='mx-auto max-w-screen-lg' />
 			<Contact />
 			<Footer />
-			<GoToFormButton />
 		</div>
 	);
 }
