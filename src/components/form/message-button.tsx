@@ -14,13 +14,11 @@ const MessageButton = () => {
 
 	return (
 		<Button
-			asChild
 			variant='secondary'
 			size='lg'
-			className='mt-2 w-full max-w-64'>
-			<Button onClick={handleClick}>
-				<Send className='h-5 w-5' /> <span>Napisz wiadomość</span>
-			</Button>
+			className='mt-2 flex w-full max-w-64 items-center gap-1'
+			onClick={handleClick}>
+			<Send className='h-5 w-5' /> <span>Napisz wiadomość</span>
 		</Button>
 	);
 };
