@@ -22,13 +22,14 @@ import {
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import { cn } from '@/lib/utils';
 import { formSchema } from '@/schema';
 import { type Attachment } from '@/types';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { File, Mail, Send, User } from 'lucide-react';
 import mime from 'mime-types';
 import Link from 'next/link';
-import { ChangeEvent, useState, useTransition } from 'react';
+import { ChangeEvent, DragEvent, useState, useTransition } from 'react';
 import { useFormState } from 'react-dom';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
@@ -47,6 +48,7 @@ const ContactForm = () => {
 			attachments: [],
 		},
 	});
+	const [dragActive, setDragActive] = useState(false);
 
 	const uploadFile = async (file: File): Promise<Attachment | undefined> => {
 		// block all files above 5 MB
@@ -96,10 +98,11 @@ const ContactForm = () => {
 		}
 	};
 
-	const onFileInputChange = async (e: ChangeEvent<HTMLInputElement>) => {
+	// pass files which will be uploaded and added
+	// to the form state:
+	const attachFiles = async (files: FileList | null) => {
 		setAttachmentsError('');
 
-		const files = e.target.files;
 		if (!files || files.length < 1) return;
 
 		const attachments: Attachment[] = [];
@@ -133,6 +136,11 @@ const ContactForm = () => {
 		setIsUploadingAttachments(false);
 	};
 
+	// when user clicks add file button:
+	const onFileInputChange = async (e: ChangeEvent<HTMLInputElement>) => {
+		attachFiles(e.target.files);
+	};
+
 	const onSubmit = (values: z.infer<typeof formSchema>) => {
 		startTransition(async () => {
 			dispatch(values);
@@ -149,8 +157,31 @@ const ContactForm = () => {
 		);
 	};
 
+	// drag & drop - display dragging indicator:
+	const handleDrag = (e: DragEvent) => {
+		e.preventDefault();
+		e.stopPropagation();
+		if (e.type === 'dragenter' || e.type === 'dragover') {
+			setDragActive(true);
+		} else if (e.type === 'dragleave') {
+			setDragActive(false);
+		}
+	};
+
+	// drag & drop - release file
+	const handleDrop = (e: DragEvent) => {
+		e.preventDefault();
+		setDragActive(false);
+		attachFiles(e.dataTransfer.files);
+	};
+
 	return (
-		<Card className='flex-1'>
+		<Card
+			className={cn('relative flex-1')}
+			onDragEnter={handleDrag}
+			onDragOver={handleDrag}
+			onDragLeave={handleDrag}
+			onDrop={handleDrop}>
 			<CardHeader>
 				<CardTitle>Bezpośredni formularz kontaktowy</CardTitle>
 				<CardDescription>
@@ -241,18 +272,21 @@ const ContactForm = () => {
 						<Button
 							type='button'
 							variant='secondary'
-							className='flex w-full items-center gap-2'
+							className='flex h-20 w-full flex-col items-center gap-1'
 							asChild>
 							<label className='cursor-pointer'>
-								<input
-									onChange={onFileInputChange}
-									type='file'
-									name='attachment'
-									hidden
-									multiple
-								/>
-								<File className='h-5 w-5' />
-								<span>Dodaj załączniki</span>
+								<div className='flex items-center gap-1'>
+									<input
+										onChange={onFileInputChange}
+										type='file'
+										name='attachment'
+										hidden
+										multiple
+									/>
+									<File className='h-5 w-5' />
+									<span>Dodaj załączniki</span>
+								</div>
+								<p className='text-foreground/50'>(lub przeciągnij je tutaj)</p>
 							</label>
 						</Button>
 						<Button
@@ -289,6 +323,19 @@ const ContactForm = () => {
 					.
 				</p>
 			</CardFooter>
+			{dragActive && (
+				<div className='absolute left-0 top-0 flex h-full w-full items-center justify-center rounded-md border-4 border-dashed border-primary/75 bg-primary/50'>
+					<Card>
+						<CardHeader>
+							<CardTitle>Przeciągnij pliki tutaj</CardTitle>
+							<CardDescription>Zostaną dodane do formularza</CardDescription>
+						</CardHeader>
+						<CardContent>
+							<File className='mx-auto h-12 w-12' />
+						</CardContent>
+					</Card>
+				</div>
+			)}
 		</Card>
 	);
 };
