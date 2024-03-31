@@ -10,22 +10,22 @@ const Effect = () => {
 			</h2>
 			<div className='grid w-full grid-cols-1 gap-4 sm:grid-cols-2 lg:gap-8'>
 				<EffectCard
-					title='Responsywność'
+					title='Responsywność ↔️'
 					subtitle='Działa u każdego klienta'
 					description='Każda strona, która wychodzi z mojego warsztatu jest responsywna, co oznacza, że wyświetla się dobrze niezależnie od wielkości urządzenia.'
 				/>
 				<EffectCard
-					title='Szybkość'
+					title='Szybkość ⚡️'
 					subtitle='Bez wielominutowych spinnerów'
 					description='Strona, którą otrzymasz nie jest tworzona z gotowych szablonów, a pisana od zera, za czym idzie możliwość lepszej optymalizacji.'
 				/>
 				<EffectCard
-					title='Nowoczesny Wygląd'
+					title='Nowoczesny Wygląd 🔮'
 					subtitle='Zaskocz konkurencję świeżością'
 					description='Twój produkt będzie wyglądał przyjemnie dla oka oraz będzie intuicyjny w użytkowaniu.'
 				/>
 				<EffectCard
-					title='Wysoka pozycja w wyszukiwarce'
+					title='Wysoka pozycja w wyszukiwarce 📈'
 					subtitle='Daj się znaleźć w internecie'
 					description='Dzięki odpowiedniemu wykorzystaniu metatagów oraz server side renderingu Twoja strona pojawi się w wyszukiwaniach Google wyżej niż konkurencja.'
 				/>
