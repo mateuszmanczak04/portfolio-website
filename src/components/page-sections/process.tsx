@@ -8,7 +8,7 @@ const Process = () => {
 			<h2 className='w-full text-center text-4xl font-bold'>
 				Przebieg współpracy
 			</h2>
-			<div className='grid w-full grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8'>
+			<div className='grid w-full grid-cols-1 gap-4 sm:grid-cols-2'>
 				<EffectCard
 					title='1. Oferta'
 					subtitle='Bo w biznesie liczy się czas i pieniądz'
