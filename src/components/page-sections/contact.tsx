@@ -5,7 +5,7 @@ import { SquareArrowOutUpRight } from 'lucide-react';
 const Contact = () => {
 	return (
 		<div
-			className='mx-auto flex w-full max-w-screen-lg flex-col gap-4 px-4 py-16 md:py-20 lg:gap-8 lg:py-24'
+			className='mx-auto flex w-full max-w-screen-lg flex-col gap-8 px-4 py-16 md:py-20 lg:py-24'
 			id='kontakt'>
 			<h2 className='w-full text-center text-4xl font-bold'>Kontakt</h2>
 			<div className='flex flex-col gap-8 leading-7 lg:flex-row lg:gap-6'>
