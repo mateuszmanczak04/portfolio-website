@@ -3,12 +3,12 @@ import EffectCard from '@/components/effect-card';
 const Process = () => {
 	return (
 		<div
-			className='mx-auto flex w-full max-w-screen-md flex-col items-center gap-8 px-4 py-16 md:py-20 lg:py-24'
+			className='mx-auto flex w-full max-w-screen-lg flex-col items-center gap-8 px-4 py-16 md:py-20 lg:py-24'
 			id='wspolpraca'>
 			<h2 className='w-full text-center text-4xl font-bold'>
 				Przebieg współpracy
 			</h2>
-			<div className='grid w-full grid-cols-1 gap-4 sm:grid-cols-2'>
+			<div className='grid w-full grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3'>
 				<EffectCard
 					title='1. Oferta 💰'
 					subtitle='Bo w biznesie liczy się czas i pieniądz'
