@@ -13,11 +13,11 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang='pl'>
+		<html lang='pl' className='overflow-x-hidden'>
 			<head>
 				<link rel='icon' href='/icons/favicon.ico' sizes='any' />
 			</head>
-			<body>{children}</body>
+			<body className='relative overflow-x-hidden'>{children}</body>
 		</html>
 	);
 }
