@@ -26,7 +26,7 @@ import { cn } from '@/lib/utils';
 import { formSchema } from '@/schema';
 import { type Attachment } from '@/types';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { File, Mail, Send, User } from 'lucide-react';
+import { File, Mail, Send, SquareArrowOutUpRight, User } from 'lucide-react';
 import mime from 'mime-types';
 import Link from 'next/link';
 import { ChangeEvent, DragEvent, useState, useTransition } from 'react';
@@ -323,8 +323,12 @@ const ContactForm = () => {
 			<CardFooter>
 				<p>
 					Klikając &bdquo;wyślij wiadomość&rdquo; akceptujesz&nbsp;
-					<Link href='/regulamin' className='underline'>
-						regulamin
+					<Link
+						href='/regulamin'
+						className='inline-flex items-center gap-1 underline'
+						target='_blank'>
+						<span>regulamin</span>
+						<SquareArrowOutUpRight className='h-4 w-4' />
 					</Link>
 					.
 				</p>
