@@ -33,6 +33,7 @@ import { ChangeEvent, DragEvent, useState, useTransition } from 'react';
 import { useFormState } from 'react-dom';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
+import DragAndDropIndicator from './drag-and-drop-indicator';
 
 const ContactForm = () => {
 	const [isUploadingAttachments, setIsUploadingAttachments] = useState(false);
@@ -328,19 +329,7 @@ const ContactForm = () => {
 					.
 				</p>
 			</CardFooter>
-			{dragActive && (
-				<div className='absolute left-0 top-0 flex h-full w-full items-center justify-center rounded-md border-4 border-dashed border-primary/75 bg-primary/50'>
-					<Card>
-						<CardHeader>
-							<CardTitle>Przeciągnij pliki tutaj</CardTitle>
-							<CardDescription>Zostaną dodane do formularza</CardDescription>
-						</CardHeader>
-						<CardContent>
-							<File className='mx-auto h-12 w-12' />
-						</CardContent>
-					</Card>
-				</div>
-			)}
+			<DragAndDropIndicator isVisible={dragActive} />
 		</Card>
 	);
 };
