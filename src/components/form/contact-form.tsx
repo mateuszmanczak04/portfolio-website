@@ -51,6 +51,11 @@ const ContactForm = () => {
 	const [dragActive, setDragActive] = useState(false);
 
 	const uploadFile = async (file: File): Promise<Attachment | undefined> => {
+		// note:
+		// it is impossible to create a progress bar because
+		// XMLHttpRequest's upload event runs so rarely
+		// that for small files it doesn't even trigger
+
 		// block all files above 5 MB
 		if (file.size > 5_242_880) {
 			throw new Error('Maksymalny rozmiar pliku to 5MB');
@@ -339,19 +344,5 @@ const ContactForm = () => {
 		</Card>
 	);
 };
-
-// TODO:
-// Wybierasz pliki lub przeciągasz
-// Limit 10 Mb
-// Jeśli to zdjęcia, to widzisz podgląd
-// Jeśli nie, to tylko nazwę pliku
-// Wysyłasz je na serwer
-// Zostają dołączone do emaila
-
-// po powrocie: styl podglądu zdjęć
-// limit wielkosci plikow
-
-// TODO:
-// loading and error state
 
 export default ContactForm;
