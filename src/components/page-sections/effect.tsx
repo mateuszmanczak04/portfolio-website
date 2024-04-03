@@ -1,8 +1,15 @@
+'use client';
+
 import EffectCard from '@/components/effect-card';
+import { motion } from 'framer-motion';
 
 const Effect = () => {
 	return (
-		<div
+		<motion.div
+			initial={{ opacity: 0, translateX: 256 }}
+			whileInView={{ opacity: 1, translateX: 0 }}
+			transition={{ delay: 0.25, duration: 2 }}
+			viewport={{ once: true }}
 			className='mx-auto flex w-full max-w-screen-lg flex-col items-center gap-8 px-4 py-16 md:py-20 lg:py-24'
 			id='efekt'>
 			<h2 className='w-full text-center text-4xl font-bold'>
@@ -32,7 +39,7 @@ const Effect = () => {
 					description='Dzięki odpowiedniemu wykorzystaniu metatagów oraz server side renderingu Twoja strona pojawi się w wyszukiwaniach Google wyżej niż konkurencja.'
 				/>
 			</div>
-		</div>
+		</motion.div>
 	);
 };
 

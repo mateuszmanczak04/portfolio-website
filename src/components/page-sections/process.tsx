@@ -1,8 +1,15 @@
+'use client';
+
 import EffectCard from '@/components/effect-card';
+import { motion } from 'framer-motion';
 
 const Process = () => {
 	return (
-		<div
+		<motion.div
+			initial={{ opacity: 0, translateX: -256 }}
+			whileInView={{ opacity: 1, translateX: 0 }}
+			transition={{ delay: 0.25, duration: 2 }}
+			viewport={{ once: true }}
 			className='mx-auto flex w-full max-w-screen-lg flex-col items-center gap-8 px-4 py-16 md:py-20 lg:py-24'
 			id='wspolpraca'>
 			<h2 className='w-full text-center text-4xl font-bold'>
@@ -35,7 +42,7 @@ const Process = () => {
 					description='W zależności od poprzednich ustaleń, Ty jako klient dostajesz pliki źródłowe lub gotową stronę postawioną w internecie, którą ja będę od tej pory zarządzał dla Ciebie.'
 				/>
 			</div>
-		</div>
+		</motion.div>
 	);
 };
 

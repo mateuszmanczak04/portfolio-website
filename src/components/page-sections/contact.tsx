@@ -1,10 +1,17 @@
+'use client';
+
 import Link from 'next/link';
 import ContactForm from '@/components/form/contact-form';
 import { SquareArrowOutUpRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const Contact = () => {
 	return (
-		<div
+		<motion.div
+			initial={{ opacity: 0, scale: 0.8 }}
+			whileInView={{ opacity: 1, scale: 1 }}
+			transition={{ delay: 0.25, duration: 0.5 }}
+			viewport={{ once: true }}
 			className='mx-auto flex w-full max-w-screen-lg flex-col gap-8 px-4 py-16 md:py-20 lg:py-24'
 			id='kontakt'>
 			<h2 className='w-full text-center text-4xl font-bold'>Kontakt</h2>
@@ -73,7 +80,7 @@ const Contact = () => {
 					</div>
 				</div>
 			</div>
-		</div>
+		</motion.div>
 	);
 };
 
