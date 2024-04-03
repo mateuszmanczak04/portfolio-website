@@ -15,7 +15,7 @@ const MessageButton = () => {
 	return (
 		<Button
 			size='lg'
-			className='mt-2 mt-4 flex w-full max-w-64 items-center gap-1'
+			className='mt-4 flex w-full max-w-64 items-center gap-1'
 			onClick={handleClick}>
 			<Send className='h-5 w-5' /> <span>Napisz wiadomość</span>
 		</Button>
