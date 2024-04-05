@@ -33,7 +33,11 @@ const About = () => {
 			<Avatar
 				className='ml-2 mr-auto mt-2 h-16 w-16 cursor-pointer shadow-xl transition hover:opacity-90'
 				onClick={() => setIsImagePreviewOpen(!isImagePreviewOpen)}>
-				<AvatarImage src='/images/avatar.webp' className='object-cover' />
+				<AvatarImage
+					src='/images/avatar.webp'
+					className='object-cover'
+					alt='moje zdjęcie jako mały avatar'
+				/>
 				<AvatarFallback>MM</AvatarFallback>
 			</Avatar>
 			<AnimatePresence>
