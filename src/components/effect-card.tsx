@@ -11,7 +11,7 @@ import { cn } from '@/lib/utils';
 interface EffectCardProps {
 	title: string;
 	subtitle: string;
-	description: string;
+	description: React.ReactNode;
 	className?: string;
 }
 
@@ -27,9 +27,7 @@ const EffectCard: FC<EffectCardProps> = ({
 				<CardTitle className='leading-[120%]'>{title}</CardTitle>
 				<CardDescription>{subtitle}</CardDescription>
 			</CardHeader>
-			<CardContent>
-				<p className='leading-7'>{description}</p>
-			</CardContent>
+			<CardContent>{description}</CardContent>
 		</Card>
 	);
 };

@@ -20,13 +20,6 @@ import { SquareArrowOutUpRight } from 'lucide-react';
 
 const PROJECTS = [
 	{
-		title: 'Banadoro',
-		description:
-			'Aplikacja pomagająca zorganizować swoją pracę za pomocą metody Pomodoro. Jest również opcja dodawania zadań. Wszystkie dane użytkownika są trzymane w chmurze, dzięki czemu użytkownik ma dostęp do aplikacji z każdego urządzenia.',
-		image: '/images/portfolio/banadoro.png',
-		url: 'https://www.banadoro.mateuszmanczak.pl/',
-	},
-	{
 		title: 'Strona Związku Zawodowego Pracowników Urzędu Miejskiego w Koninie',
 		image: '/images/portfolio/zzpumk.png',
 		description:
@@ -34,9 +27,16 @@ const PROJECTS = [
 		url: 'https://www.zzpumk.lm.pl/',
 	},
 	{
+		title: 'Banadoro',
+		description:
+			'Nasza aplikacja Pomodoro to narzędzie do zarządzania czasem, które pomaga w zwiększeniu produktywności i skupienia. Opiera się na popularnej technice Pomodoro, która wykorzystuje 25-minutowe cykle pracy przeplatane krótkimi przerwami. Aplikacja posiada szereg funkcji, które ułatwiają korzystanie z tej metody, m.in. możliwość tworzenia zadań, synchronizacja w chmurze, intuicyjny interfejs, pomodoro timer.',
+		image: '/images/portfolio/banadoro.png',
+		url: 'https://www.banadoro.mateuszmanczak.pl/',
+	},
+	{
 		title: 'Moja osobista strona z korepetycjami z matematyki',
 		description:
-			'Nie ma tam żadnej skomplikowanej mechaniki, ale przecież o to chodziło. Strona czysto informacyjna.',
+			'Celem projektu było stworzenie prostej strony internetowej, która przedstawia moją ofertę korepetycji. Strona zawiera informacje o tym, kim jestem, o cenach, przedmiotach oraz udostępniam na niej kilka opinii moich uczniów.',
 		image: '/images/portfolio/korepetycje.png',
 		url: 'https://korepetycje.mateuszmanczak.pl/',
 	},
@@ -49,7 +49,7 @@ const Portfolio = () => {
 			id='efekt'>
 			<h2 className='w-full text-center text-4xl font-bold'>Portfolio</h2>
 			<Carousel className='w-full' opts={{ loop: true }}>
-				<CarouselContent className='h-80'>
+				<CarouselContent>
 					{PROJECTS.map((project) => (
 						<CarouselItem
 							key={project.title}

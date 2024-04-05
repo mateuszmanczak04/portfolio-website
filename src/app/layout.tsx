@@ -3,9 +3,9 @@ import './globals.css';
 import { ThemeProvider } from '@/components/theme-provider';
 
 export const metadata: Metadata = {
-	title: 'Strony Internetowe - Mateusz Mańczak',
+	title: 'Web Majster Maniek',
 	description:
-		'Pozwól swoim klientom lepiej poznać Twoją firmę dzięki profesjonalnej stronie internetowej!',
+		'Profesjonalna strona internetowa szyta na miarę Twoich potrzeb. Zabłyśnij w sieci!',
 };
 
 export default function RootLayout({
