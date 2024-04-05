@@ -57,6 +57,7 @@ const About = () => {
 						}}
 						transition={{ duration: 0.25 }}>
 						<Image
+							priority={true}
 							src='/images/avatar.webp'
 							width={400}
 							height={533}
