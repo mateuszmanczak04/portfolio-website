@@ -39,6 +39,7 @@ const Effect = () => {
 					description='Dzięki odpowiedniemu wykorzystaniu metatagów oraz server side renderingu Twoja strona pojawi się w wyszukiwaniach Google wyżej niż konkurencja.'
 				/>
 			</div>
+			<p className='text-2xl font-bold'>I wiele więcej!</p>
 		</motion.div>
 	);
 };
