@@ -3,9 +3,9 @@ import './globals.css';
 import { ThemeProvider } from '@/components/theme-provider';
 
 export const metadata: Metadata = {
-	title: 'Web Majster Maniek',
+	title: 'Mateusz Mańczak - Frontend / Full-Stack Developer',
 	description:
-		'Profesjonalna strona internetowa szyta na miarę Twoich potrzeb. Zabłyśnij w sieci!',
+		'Aspiring Frontend / Full-Stack Developer. I create websites and web applications using modern technologies like React, Next.js, and Tailwind CSS.',
 };
 
 export default function RootLayout({

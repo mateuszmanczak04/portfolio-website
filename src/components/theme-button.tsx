@@ -16,8 +16,8 @@ export const ThemeButton = () => {
 	};
 
 	return (
-		<Button variant='outline' className='mt-2 w-64 gap-1' onClick={handleClick}>
-			{theme === 'light' ? <Sun /> : <Moon />}Zmień motyw
+		<Button variant="outline" className="mt-2 w-64 gap-1" onClick={handleClick}>
+			{theme === 'light' ? <Sun /> : <Moon />}Switch theme
 		</Button>
 	);
 };

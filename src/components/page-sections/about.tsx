@@ -13,7 +13,7 @@ const About = () => {
 		<div
 			className='relative mx-auto flex w-full max-w-screen-sm flex-col items-center gap-8 px-4 py-16 md:py-20 lg:py-24'
 			id='o-mnie'>
-			<h2 className='text-4xl font-bold'>O mnie</h2>
+			<h2 className='text-4xl font-bold'>About me</h2>
 			<motion.div
 				style={{ originX: 0.1, originY: 0.9 }}
 				initial={{ opacity: 0, translateY: 64, scale: 0 }}
@@ -22,19 +22,18 @@ const About = () => {
 				viewport={{ once: true }}
 				className='after:border-top-[50px_solid_#555] relative w-full space-y-2 rounded-xl bg-accent p-4 leading-7 after:absolute after:-bottom-7 after:left-6 after:-z-10 after:h-0 after:w-0 after:border-l-[24px] after:border-r-[24px] after:border-t-[32px] after:border-l-transparent after:border-r-transparent after:border-t-accent dark:bg-card dark:after:border-t-card'>
 				<p>
-					Cześć! Mam na imię Mateusz, ale większość osób mówi mi Maniek. Jestem
-					studentem informatyki na poznańskim uniwersytecie. Swoją pasję do
-					programowania rozwijam po godzinach, specjalizując się w tworzeniu
-					nowoczesnych i funkcjonalnych aplikacji webowych.
+					Hello! My name is Mateusz and I am a computer science student at the
+					University of Poznań. Developing web applications and general
+					programming has become my biggest passion, and that&apos;s why I am
+					trying to improve my skills every day.
 				</p>
 				<p>
-					Stworzyłem tę stronę, aby zaprezentować światu swoje umiejętności i
-					doświadczenie w programowaniu. Zależy mi na tym, by każdy projekt był
-					dopracowany w najmniejszych szczegółach i spełniał wszystkie
-					oczekiwania klienta.
+					I created this site to showcase my skills and experience in
+					programming to the world. My current goal, which I am striving for, is
+					to secure an internship for the holiday period.
 				</p>
 				<span className='block text-sm opacity-50'>
-					(Avatar poniżej jest klikalny)
+					(You can press the avatar below)
 				</span>
 			</motion.div>
 			<Avatar

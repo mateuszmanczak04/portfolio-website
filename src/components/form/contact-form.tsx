@@ -59,13 +59,13 @@ const ContactForm = () => {
 
 		// block all files above 5 MB
 		if (file.size > 5_242_880) {
-			throw new Error('Maksymalny rozmiar pliku to 5MB');
+			throw new Error('Maximum file size is 5MB.');
 		}
 
 		const fileType = mime.lookup(file.name);
 
 		if (typeof fileType !== 'string') {
-			throw new Error('Serwer nie obsługuje plików bez rozszerzenia.');
+			throw new Error('File not supported.');
 		}
 
 		const { url, error } = await getS3Url({
@@ -79,7 +79,7 @@ const ContactForm = () => {
 
 		if (!url) {
 			throw new Error(
-				'Wystąpił błąd podczas dodawania pliku. Spróbuj ponownie później.',
+				'There was an error when adding a file. Please try again later.',
 			);
 		}
 
@@ -99,7 +99,7 @@ const ContactForm = () => {
 		} catch (err) {
 			// catch exceptions when uploading to S3
 			throw new Error(
-				'Wystąpił błąd podczas dodawania pliku. Spróbuj ponownie później.',
+				'There was an error when adding a file. Please try again later.',
 			);
 		}
 	};
@@ -189,9 +189,9 @@ const ContactForm = () => {
 			onDragLeave={handleDrag}
 			onDrop={handleDrop}>
 			<CardHeader>
-				<CardTitle>Bezpośredni formularz kontaktowy</CardTitle>
+				<CardTitle>Direct message form</CardTitle>
 				<CardDescription>
-					To, co tu napiszesz, przyjdzie mi natychmiastowo na maila.
+					Have any questions? Feel free to ask me anything!
 				</CardDescription>
 			</CardHeader>
 			<CardContent>
@@ -202,13 +202,13 @@ const ContactForm = () => {
 							name='name'
 							render={({ field }) => (
 								<FormItem>
-									<FormLabel>Imię i nazwisko</FormLabel>
+									<FormLabel>Name</FormLabel>
 									<FormControl>
 										<div className='relative'>
 											<Input
 												id='form-name-input'
 												{...field}
-												placeholder='Jan Kowalski'
+												placeholder='John Doe'
 												className='pl-10'
 											/>
 											<User className='absolute left-2.5 top-2.5 h-5 w-5' />
@@ -223,7 +223,7 @@ const ContactForm = () => {
 							name='email'
 							render={({ field }) => (
 								<FormItem>
-									<FormLabel>E-mail</FormLabel>
+									<FormLabel>Email</FormLabel>
 									<FormControl>
 										<div className='relative'>
 											<Input
@@ -243,13 +243,9 @@ const ContactForm = () => {
 							name='message'
 							render={({ field }) => (
 								<FormItem>
-									<FormLabel>Wiadomość</FormLabel>
+									<FormLabel>Message</FormLabel>
 									<FormControl>
-										<Textarea
-											rows={8}
-											{...field}
-											placeholder='Dzień dobry, chciałbym zlecić ...'
-										/>
+										<Textarea rows={8} {...field} placeholder='Hi...' />
 									</FormControl>
 									<FormMessage />
 								</FormItem>
@@ -258,7 +254,7 @@ const ContactForm = () => {
 						{/* preview of attachments: */}
 						<div className='grid grid-cols-1 gap-2'>
 							{isUploadingAttachments && (
-								<p className='animate-pulse text-center'>Ładuję pliki...</p>
+								<p className='animate-pulse text-center'>Loading files...</p>
 							)}
 							{form.watch('attachments').map((attachment: Attachment) => (
 								<AttachmentItem
@@ -290,9 +286,9 @@ const ContactForm = () => {
 										multiple
 									/>
 									<File className='h-5 w-5' />
-									<span>Dodaj załączniki</span>
+									<span>Attach files</span>
 								</div>
-								<p className='text-foreground/50'>(lub przeciągnij je tutaj)</p>
+								<p className='text-foreground/50'>(or drag them here)</p>
 							</label>
 						</Button>
 						<Button
@@ -300,12 +296,10 @@ const ContactForm = () => {
 							className='flex w-full items-center gap-2'
 							disabled={isPending}>
 							<Send className='h-5 w-5' />
-							<span>Wyślij wiadomość</span>
+							<span>Send a message</span>
 						</Button>
 						{isPending && (
-							<p className='animate-pulse text-center'>
-								Trwa wysyłanie wiadomości...
-							</p>
+							<p className='animate-pulse text-center'>Sending a message...</p>
 						)}
 						{submitResult?.error && (
 							<p className='rounded-md bg-destructive/10 p-2 text-center text-destructive'>
@@ -322,12 +316,12 @@ const ContactForm = () => {
 			</CardContent>
 			<CardFooter>
 				<p>
-					Klikając &bdquo;wyślij wiadomość&rdquo; akceptujesz&nbsp;
+					By clicking &bdquo;send message&rdquo; you accept the&nbsp;
 					<Link
 						href='/regulamin'
 						className='inline-flex items-center gap-1 underline'
 						target='_blank'>
-						<span>regulamin</span>
+						<span>terms and conditions</span>
 						<SquareArrowOutUpRight className='h-4 w-4' />
 					</Link>
 					.

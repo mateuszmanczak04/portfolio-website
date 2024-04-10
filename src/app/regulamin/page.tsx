@@ -9,91 +9,87 @@ const RegulationsPage = () => {
 		<div className='mx-auto w-full max-w-screen-md space-y-4 p-4'>
 			<Button asChild variant='secondary' className='items-center gap-1'>
 				<Link href='/'>
-					<ArrowLeft className='h-5 w-5' />{' '}
-					<span>Powrót do strony głównej</span>
+					<ArrowLeft className='h-5 w-5' /> <span>Return to the main page</span>
 				</Link>
 			</Button>
-			<h1 className='text-4xl font-semibold'>Regulamin</h1>
+			<h1 className='text-4xl font-semibold'>Regulations</h1>
 			<p>
-				Niniejszy regulamin określa zasady przetwarzania danych osobowych
-				użytkowników formularza kontaktowego na stronie internetowej [nazwa
-				strony internetowej].
+				This regulation defines the rules for processing personal data of users
+				of the contact form on the website [website name].
 			</p>
-			<h2 className='text-2xl font-semibold'>1. Administrator danych</h2>
+			<h2 className='text-2xl font-semibold'>1. Data administrator</h2>
 			<Separator />
 			<p>
-				Administratorem danych osobowych zbieranych za pomocą formularza
-				kontaktowego jest:
+				The administrator of personal data collected through the contact form
+				is:
 			</p>
 			<ul className='list-disc pl-4'>
-				<li>Imię i nazwisko: Mateusz Mańczak</li>
-				<li>Numer telefonu: 725 726 901</li>
-				<li>Adres e-mail: mateuszmanczak@icloud.com</li>
+				<li>Name and surname: Mateusz Mańczak</li>
+				<li>Phone number: 725 726 901</li>
+				<li>Email address: mateuszmanczak@icloud.com</li>
 			</ul>
-			<h2 className='text-2xl font-semibold'>2. Cel przetwarzania danych</h2>
+			<h2 className='text-2xl font-semibold'>2. Purpose of data processing</h2>
 			<Separator />
 			<p>
-				Dane osobowe zbierane za pomocą formularza kontaktowego są przetwarzane
-				w celu:
+				Personal data collected through the contact form are processed for the
+				purpose of:
 			</p>
 			<ul className='list-disc pl-4'>
-				<li>Możliwości skontaktowania się z klientem</li>
+				<li>Possibility to contact the client</li>
 			</ul>
 			<h2 className='text-2xl font-semibold'>
-				3. Podstawa prawna przetwarzania danych
+				3. Legal basis for data processing
 			</h2>
 			<Separator />
 			<p>
-				Podstawą prawną przetwarzania danych osobowych jest zgoda użytkownika
-				wyrażona poprzez kliknięcie w przycisk &quot;Wyślij wiadomość&quot; i
-				akceptację regulaminu.
+				The legal basis for the processing of personal data is the user&apos;s
+				consent expressed by clicking the &ldquo;Send message&rdquo; button and
+				accepting the regulations.
 			</p>
-			<h2 className='text-2xl font-semibold'>4. Odbiorcy danych</h2>
+			<h2 className='text-2xl font-semibold'>4. Data recipients</h2>
 			<Separator />
-			<p>Dane osobowe nie są przekazywane żadnym innym odbiorcom.</p>
-			<h2 className='text-2xl font-semibold'>5. Okres przechowywania danych</h2>
+			<p>Personal data are not transferred to any other recipients.</p>
+			<h2 className='text-2xl font-semibold'>5. Data storage period</h2>
 			<Separator />
-			<p>Dane osobowe są przechowywane przez okres nieokreślony.</p>
-			<h2 className='text-2xl font-semibold'>6. Prawa użytkownika</h2>
+			<p>Personal data are stored for an indefinite period.</p>
+			<h2 className='text-2xl font-semibold'>6. User rights</h2>
 			<Separator />
-			<p>Użytkownikowi przysługuje prawo do:</p>
+			<p>The user has the right to:</p>
 			<ul className='list-disc pl-4'>
-				<li>Dostępu do swoich danych osobowych</li>
-				<li>Sprostowania swoich danych osobowych</li>
-				<li>Usunięcia swoich danych osobowych</li>
-				<li>Ograniczenia przetwarzania swoich danych osobowych</li>
-				<li>
-					Wniesienia sprzeciwu wobec przetwarzania swoich danych osobowych
-				</li>
-				<li>Przenoszenia swoich danych osobowych</li>
+				<li>Access to their personal data</li>
+				<li>Correction of their personal data</li>
+				<li>Deletion of their personal data</li>
+				<li>Restriction of processing of their personal data</li>
+				<li>Object to the processing of their personal data</li>
+				<li>Transfer of their personal data</li>
 			</ul>
-			<h2 className='text-2xl font-semibold'>7. Cofnięcie zgody</h2>
+			<h2 className='text-2xl font-semibold'>7. Withdrawal of consent</h2>
 			<Separator />
 			<p>
-				Użytkownik ma prawo do cofnięcia zgody na przetwarzanie swoich danych
-				osobowych w dowolnym momencie. Cofnięcie zgody nie wpływa na zgodność z
-				prawem przetwarzania, którego dokonano na podstawie zgody przed jej
-				cofnięciem.
-			</p>
-			<h2 className='text-2xl font-semibold'>8. Skarga do Prezesa UODO</h2>
-			<Separator />
-			<p>
-				Użytkownik ma prawo wnieść skargę do Prezesa Urzędu Ochrony Danych
-				Osobowych, jeśli uważa, że jego dane osobowe są przetwarzane niezgodnie
-				z prawem.
+				The user has the right to withdraw consent to the processing of their
+				personal data at any time. Withdrawal of consent does not affect the
+				legality of the processing which was carried out on the basis of consent
+				before its withdrawal.
 			</p>
 			<h2 className='text-2xl font-semibold'>
-				9. Informacja o dobrowolności podania danych
-			</h2>
-			<Separator />
-			<p>Podanie danych osobowych jest dobrowolne.</p>
-			<h2 className='text-2xl font-semibold'>
-				10. Zgoda na przetwarzanie danych
+				8. Complaint to the President of the Office for Personal Data Protection
 			</h2>
 			<Separator />
 			<p>
-				Wysyłając formularz, użytkownik wyraża zgodę na przetwarzanie swoich
-				danych osobowych zgodnie z niniejszym regulaminem.
+				The user has the right to lodge a complaint with the President of the
+				Office for Personal Data Protection if they believe that their personal
+				data is being processed unlawfully.
+			</p>
+			<h2 className='text-2xl font-semibold'>
+				9. Information about the voluntary provision of data
+			</h2>
+			<Separator />
+			<p>Providing personal data is voluntary.</p>
+			<h2 className='text-2xl font-semibold'>10. Consent to data processing</h2>
+			<Separator />
+			<p>
+				By sending the form, the user consents to the processing of their
+				personal data in accordance with this regulation.
 			</p>
 			<div className='h-8'></div>
 			<Footer />

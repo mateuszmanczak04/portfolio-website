@@ -2,8 +2,6 @@ import {
 	Carousel,
 	CarouselContent,
 	CarouselItem,
-	CarouselNext,
-	CarouselPrevious,
 } from '@/components/ui/carousel';
 import {
 	Card,
@@ -12,31 +10,30 @@ import {
 	CardHeader,
 	CardTitle,
 } from '@/components/ui/card';
-import { describe } from 'node:test';
-import Image from 'next/image';
 import { Button } from '../ui/button';
 import Link from 'next/link';
 import { SquareArrowOutUpRight } from 'lucide-react';
 
 const PROJECTS = [
 	{
-		title: 'Strona Związku Zawodowego Pracowników Urzędu Miejskiego w Koninie',
+		title:
+			'Website of the Trade Union of Employees of the Municipal Office in Konin',
 		image: '/images/portfolio/zzpumk.png',
 		description:
-			'Strona stworzona na zamówienie dla ZZPUMK. Jest to prosta strona informacyjna.',
+			'A website created on order for ZZPUMK. It is a simple informational website.',
 		url: 'https://www.zzpumk.lm.pl/',
 	},
 	{
 		title: 'Banadoro',
 		description:
-			'Nasza aplikacja Pomodoro to narzędzie do zarządzania czasem, które pomaga w zwiększeniu produktywności i skupienia. Opiera się na popularnej technice Pomodoro, która wykorzystuje 25-minutowe cykle pracy przeplatane krótkimi przerwami. Aplikacja posiada szereg funkcji, które ułatwiają korzystanie z tej metody, m.in. możliwość tworzenia zadań, synchronizacja w chmurze, intuicyjny interfejs, pomodoro timer.',
+			'A time management tool that helps increase productivity and focus. It is based on the popular Pomodoro technique, which uses 25-minute work cycles interspersed with short breaks. The application has a number of features that facilitate the use of this method, including the ability to create tasks, cloud synchronization, intuitive interface, pomodoro timer.',
 		image: '/images/portfolio/banadoro.png',
 		url: 'https://www.banadoro.mateuszmanczak.pl/',
 	},
 	{
-		title: 'Moja osobista strona z korepetycjami z matematyki',
+		title: 'My personal website for math tutoring',
 		description:
-			'Celem projektu było stworzenie prostej strony internetowej, która przedstawia moją ofertę korepetycji. Strona zawiera informacje o tym, kim jestem, o cenach, przedmiotach oraz udostępniam na niej kilka opinii moich uczniów.',
+			'The aim of the project was to create a simple website that presents my tutoring offer. The website contains information about who I am, about prices, subjects and I also share a few opinions of my students there.',
 		image: '/images/portfolio/korepetycje.png',
 		url: 'https://korepetycje.mateuszmanczak.pl/',
 	},
@@ -45,10 +42,11 @@ const PROJECTS = [
 const Portfolio = () => {
 	return (
 		<div
-			className='mx-auto flex w-full max-w-screen-lg flex-col items-center gap-8 px-4 py-16 md:py-20 lg:py-24'
+			className='mx-auto flex w-full max-w-screen-lg flex-col items-center px-4 py-16 md:py-20 lg:py-24'
 			id='efekt'>
-			<h2 className='w-full text-center text-4xl font-bold'>Portfolio</h2>
-			<Carousel className='w-full' opts={{ loop: true }}>
+			<h2 className='w-full text-center text-4xl font-bold'>My projects</h2>
+			<p className='mt-2 text-accent-foreground'>(Swipe)</p>
+			<Carousel className='mt-8 w-full' opts={{ loop: true }}>
 				<CarouselContent>
 					{PROJECTS.map((project) => (
 						<CarouselItem
