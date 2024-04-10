@@ -6,7 +6,7 @@ import nodemailer from 'nodemailer';
 import { z } from 'zod';
 
 export const submitForm = async (
-	prevState: any,
+	_prevState: any,
 	values: z.infer<typeof formSchema>,
 ) => {
 	const validatedFields = formSchema.safeParse(values);
