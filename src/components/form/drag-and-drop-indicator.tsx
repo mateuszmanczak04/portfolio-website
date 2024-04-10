@@ -24,8 +24,8 @@ const DragAndDropIndicator: FC<DragAndDropIndicatorProps> = ({ isVisible }) => {
 					className='absolute left-0 top-0 flex h-full w-full items-center justify-center rounded-md border-4 border-dashed border-primary/75 bg-primary/50'>
 					<Card>
 						<CardHeader>
-							<CardTitle>Przeciągnij pliki tutaj</CardTitle>
-							<CardDescription>Zostaną dodane do formularza</CardDescription>
+							<CardTitle>Drag files here</CardTitle>
+							<CardDescription>They will be added to the form</CardDescription>
 						</CardHeader>
 						<CardContent>
 							<File className='mx-auto h-12 w-12' />
