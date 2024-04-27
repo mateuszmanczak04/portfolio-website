@@ -1,18 +1,18 @@
 import {
-	Carousel,
-	CarouselContent,
-	CarouselItem,
-} from '@/components/ui/carousel';
-import {
 	Card,
 	CardContent,
 	CardDescription,
 	CardHeader,
 	CardTitle,
 } from '@/components/ui/card';
-import { Button } from '../ui/button';
-import Link from 'next/link';
+import {
+	Carousel,
+	CarouselContent,
+	CarouselItem,
+} from '@/components/ui/carousel';
 import { SquareArrowOutUpRight } from 'lucide-react';
+import Link from 'next/link';
+import { Button } from '../ui/button';
 
 const PROJECTS = [
 	{
@@ -28,14 +28,14 @@ const PROJECTS = [
 		description:
 			'A time management tool that helps increase productivity and focus. It is based on the popular Pomodoro technique, which uses 25-minute work cycles interspersed with short breaks. The application has a number of features that facilitate the use of this method, including the ability to create tasks, cloud synchronization, intuitive interface, pomodoro timer.',
 		image: '/images/portfolio/banadoro.png',
-		url: 'https://www.banadoro.mateuszmanczak.pl/',
+		url: 'https://banadoro-77547mxec-mateuszmanczak04.vercel.app/',
 	},
 	{
 		title: 'My personal website for math tutoring',
 		description:
 			'The aim of the project was to create a simple website that presents my tutoring offer. The website contains information about who I am, about prices, subjects and I also share a few opinions of my students there.',
 		image: '/images/portfolio/korepetycje.png',
-		url: 'https://korepetycje.mateuszmanczak.pl/',
+		url: 'https://korepetycje-cqx43gg79-mateuszmanczak04.vercel.app/',
 	},
 ];
 
